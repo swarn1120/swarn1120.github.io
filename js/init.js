@@ -80,7 +80,7 @@ $(document).ready(function(){
 		}
 		//
 		$("#countdown").countdown({
-			date: "6 January 2017 23:59:59", // change date/time here - do not change the format!
+			date: "7 January 2017 23:59:59", // change date/time here - do not change the format!
 			format: "on"
 		});
 	});
