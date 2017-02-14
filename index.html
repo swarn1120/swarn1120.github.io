@@ -15,13 +15,15 @@
     <div class="nav-wrapper container">
       <a id="logo-container" href="#" class="brand-logo white-text">Welcome Home</a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="#" class="white-text">Navbar Link</a></li>
-        <li><a href="#" class="white-text">Navbar Link</a></li>
-        <li><a href="#" class="white-text">Navbar Link</a></li>
+        <li><a href="#things" class="white-text">Things to do</a></li>
+        <li><a href="#pictures" class="white-text">Beautiful</a></li>
+        <li><a href="#fun" class="white-text">Fun</a></li>
       </ul>
 
       <ul id="nav-mobile" class="side-nav">
-        <li><a href="#">Navbar Link</a></li>
+        <li><a href="#things" class="white-text">Things to do</a></li>
+        <li><a href="#pictures" class="white-text">Beautiful</a></li>
+        <li><a href="#fun" class="white-text">Fun</a></li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
@@ -50,7 +52,7 @@
       <div class="container">
         <br><br>
         <hr color="white">
-        <h4 class="header center white-text text-darken-2">Things to Do</h4>
+        <h4 id="things" class="header center white-text text-darken-2 scrollspy">Things to Do</h4>
         <hr color="white">
         <div class="row center">
           <div class="card col s6 push-s3">
@@ -129,7 +131,7 @@
   <div class="container">
     <div class="section">
 
-      <div class="row">
+      <div id="pictures" class="row scrollspy">
         <div class="carousel carousel-slider">
           <a class="carousel-item" href="#one!"><img src="images/1.jpg"></a>
           <a class="carousel-item" href="#three!"><img src="images/2.jpg"></a>
@@ -154,7 +156,8 @@
     <div class="section no-pad-bot">
       <div class="container">
         <div class="row center">
-          <h4 class="header col s12 light">Fun stuff and Extra</h4>
+          <h6 id="fun"></h6>
+          <h4 class="header col s12 light scrollspy" >Fun stuff and Extra</h4>
         </div>
       </div>
     </div>
