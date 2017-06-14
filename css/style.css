@@ -41,3 +41,10 @@ p {
 footer.page-footer {
   margin: 0;
 }
+body {
+    background-image: url("/images/awesome.gif");
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-attachment: fixed;
+    background-size: cover;
+}
