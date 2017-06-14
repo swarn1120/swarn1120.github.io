@@ -1,5 +1,6 @@
 (function($){
   $(function(){
+    $('.scrollspy').scrollSpy();
     $(".dropdown-button").dropdown();
     $(".button-collapse").sideNav();
     $('.parallax').parallax();
