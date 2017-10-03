@@ -2,8 +2,6 @@
   "name": "study.io",
   "short_name": "study.io",
   "display": "minimal-ui",
-  "start_url": "/",
-  "theme_color": "#673ab6",
   "icons": [
     {
       "src": "book.png",
@@ -22,19 +20,13 @@
     }
     {
       "src": "book.png",
-      "sizes": "512x212",
+      "sizes": "512x512",
       "type": "image/png"
     }
   ],
-<<<<<<< HEAD
   "background_color": "#311b92",
   "theme_color": "#311b92",
   "display": "standalone"
 
-=======
-  "background_color": "#2196F3",
-  "theme_color": "#2196F3",
-  "display": "standalone",
->>>>>>> parent of 1a5ba2d... Pls splashscreen
 
 }
