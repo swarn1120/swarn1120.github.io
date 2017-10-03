@@ -2,8 +2,6 @@
   "name": "study.io",
   "short_name": "study.io",
   "display": "minimal-ui",
-  "start_url": "/",
-  "theme_color": "#673ab6",
   "icons": [
     {
       "src": "book.png",
