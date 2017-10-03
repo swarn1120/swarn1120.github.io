@@ -4,7 +4,6 @@
   "display": "minimal-ui",
   "start_url": "/",
   "theme_color": "#673ab6",
-  "background_color": "#111111",
   "icons": [
     {
       "src": "book.png",
@@ -15,6 +14,5 @@
   "background_color": "#2196F3",
   "theme_color": "#2196F3",
   "display": "standalone",
-  "orientation": "portrait"
 
 }
