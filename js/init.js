@@ -1,13 +1,7 @@
 (function($){
   $(function(){
-    $('.scrollspy').scrollSpy();
-    $(".dropdown-button").dropdown();
-    $(".button-collapse").sideNav();
-    $('.parallax').parallax();
-    $('.modal').modal();
-    $('#modal1').modal('open');
-    $('#modal1').modal('close');
 
+    $('.button-collapse').sideNav();
 
   }); // end of document ready
 })(jQuery); // end of jQuery name space

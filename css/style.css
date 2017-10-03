@@ -6,49 +6,9 @@
  * Made By MaterializeCSS.com
  */
 
-   html {
-     font-family: Arial, Helvetica, sans-serif;
-   }
-
-nav ul a,
-nav .brand-logo {
-  color: #444;
-}
-
-p {
-  line-height: 2rem;
-}
-
-.button-collapse {
-  color: #FFFFFF;
-}
-
-.parallax-container {
-  min-height: 500px;
-  line-height: 0;
-  height: auto;
-  color: rgba(255,255,255,.9);
-}
-  .parallax-container .section {
-    width: 100%;
-  }
-
-
-
 .icon-block {
   padding: 0 15px;
 }
 .icon-block .material-icons {
-  font-size: inherit;
-}
-
-footer.page-footer {
-  margin: 0;
-}
-body {
-    background-image: url("/images/awesome.gif");
-    background-repeat: no-repeat;
-    background-position: right top;
-    background-attachment: fixed;
-    background-size: cover;
+	font-size: inherit;
 }

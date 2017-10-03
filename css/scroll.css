@@ -1,2 +1,2 @@
-::-webkit-scrollbar{width:10px;height:10px;}::-webkit-scrollbar-track{background:rgb(118,118,118);}
-::-webkit-scrollbar-thumb{background:rgba(255, 0, 91, 1);}::-webkit-scrollbar-thumb:hover{background:rgba(255, 12, 45, 1);}
+::-webkit-scrollbar{width:3px;height:5px;}::-webkit-scrollbar-track{background:rgb(211,211,211);}
+::-webkit-scrollbar-thumb{background:rgb(255,0,0);}::-webkit-scrollbar-thumb:hover{background:rgb(204,0,102);}
