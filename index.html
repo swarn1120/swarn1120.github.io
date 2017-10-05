@@ -23,32 +23,36 @@
         <li class="black white-text"><a href="https://elearning.utdallas.edu/webapps/portal/execute/tabs/tabAction?tab_tab_group_id=_1_1">Blackboard</a></li>
         <li class="blue darken-3 white-text"><a href="https://outlook.office365.com/owa/">Outlook</a></li>
         <li class="orange darken-2 white-text"><a href="https://galaxy.utdallas.edu">Galaxy</a></li>
-        <li class="pink accent-4 white-text"><a href="#s">Food</a></li>
+        <li class="pink accent-4 white-text"><a class="modal-trigger" href="#modal1">Food</a></li>
       </ul>
 
       <ul id="nav-mobile" class="side-nav deep-purple darken-4">
         <li class="black white-text"><a href="https://elearning.utdallas.edu/webapps/portal/execute/tabs/tabAction?tab_tab_group_id=_1_1"><span class="black white-text">Blackboard</span></a></li>
         <li class="blue darken-3 white-text"><a href="https://outlook.office365.com/owa/"><span class="white-text">Outlook</span></a></li>
         <li class="orange darken-2 white-text"><a href="https://galaxy.utdallas.edu"><span class="white-text">Galaxy</span></a></li>
-        <li class="pink accent-4 white-text"><a href="#"><span class="white-text">Food</span></a></li>
+        <li class="pink accent-4 white-text"><a class="modal-trigger white-text" href="#modal1">Food</a></li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
   </nav>
   <div><hr color="red" size="40"></div>
-  <div class="container">
     <!--Math Card-->
     <div class="row">
       <div class="col s12 m6">
-        <div class="card amber darken-4 large">
+        <div class="card amber darken-4 large z-depth-5">
           <div class="card-content white-text">
-            <span class="card-title">Math</span>
+            <span class="card-title">Math 2413</span>
             <hr color="white">
+            <a class="waves-effect waves-light btn" href="test1.pdf" target="_blank">Practice Test 1</a><br><br>
+            <a class="waves-effect waves-light btn" href="test2.pdf">Practice Test 2</a><br><br>
+            <a class="waves-effect waves-light btn" href="test3.pdf">Practice Test 3</a><br><br>
+
+            <!--
             <div class="collection">
               <a href="https://www.webassign.net/v4cgi/student.pl?UserPass=e0b079a0443c57e282430987e1a2e498" class="collection-item waves-effect waves-light  blue-grey lighten-5 red-text"><i class="material-icons left">assignment</i>WebAssign</a>
               <a href="https://www.mathxl.com/login_mxl.htm" class="collection-item green darken-3 white-text"><i class="material-icons left">assignment</i>Pearson MathXL</a>
               <a href="https://www.mathway.com/Algebra" class="collection-item light-blue darken-4 white-text"><i class="material-icons left">dialpad</i>Mathway</a>
-            </div>
+            </div>-->
           </div>
           <div class="card-action ">
             <a href="#" class="white-text">Suggest us more buttons!</a>
@@ -57,7 +61,7 @@
       </div>
       <!--Science Card-->
         <div class="col s12 m6">
-          <div class="card deep-purple darken-1 large">
+          <div class="card deep-purple darken-1 large z-depth-5">
             <div class="card-content white-text">
               <span class="card-title">Science</span>
               <hr color="white">
@@ -73,18 +77,18 @@
     <!--Study Session Card-->
     <div class="row">
       <div class="col s12 m6">
-        <div class="card grey lighten-1 large">
+        <div class="card grey lighten-1 large z-depth-5">
           <div class="card-content white-text">
             <span class="card-title">Find a Study Session</span>
             <hr color="white">
             <div class="center">
-            <iframe src="https://feed.mikle.com/widget/v2/48865/" height="800"  scrolling="no" frameBorder="0"></iframe></div>
+            <iframe src="https://feed.mikle.com/widget/v2/48865/" height="800"  scrolling="yes" frameBorder="0"></iframe></div>
           </div>
         </div>
       </div>
       <!--IDK Card-->
         <div class="col s12 m6">
-          <div class="card cyan large">
+          <div class="card cyan large z-depth-5">
             <div class="card-content white-text">
               <span class="card-title">Google Calendar</span>
               <hr color="white">
@@ -100,10 +104,23 @@
   </div>
 </div>
 </div>
+
+ <!-- Modal Structure -->
+ <div id="modal1" class="modal modal-fixed-footer">
+   <div class="modal-content ">
+     <h4>Hungry?</h4>
+     <p>A bunch of text</p>
+     <img src="foodTimes.jpg" width="600"></img>
+   </div>
+   <div class="modal-footer">
+     <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Close</a>
+   </div>
+ </div>
+
 <footer class="page-footer pink accent-4">
   <div class="container">
     <div class="row">
-      <div class="col l6 s12">
+      <div class="col l6 s6">
         <h5 class="white-text">Created by Students</h5>
           <p class="grey-text text-lighten-4">Brought to you by the idiots from room 3.335</p>
       </div>
