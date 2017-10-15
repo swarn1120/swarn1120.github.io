@@ -6,9 +6,14 @@
  * Made By MaterializeCSS.com
  */
 
+
 .icon-block {
   padding: 0 15px;
 }
 .icon-block .material-icons {
 	font-size: inherit;
+}
+img {
+    -webkit-filter: blur(5px); /* Safari 6.0 - 9.0 */
+    filter: blur(4px);
 }
