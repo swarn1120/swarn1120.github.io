@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>hangtime | Home</title>
+
+  <link rel="stylesheet" href="node_modules/bulma/css/bulma.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="js/app.js"></script>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <link href='https://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.css' rel='stylesheet' />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v0.0.4/leaflet.fullscreen.css' rel='stylesheet'>
+</head>
+
+<body>
+  <div id='map'></div>
+  <nav class="navbar is-transparent">
+    <div class="navbar-brand is-transparent">
+      <a class="navbar-item">
+        <div class="subtitle is-3 is-pulled-left"><span class="theme is-bold">hang|</span>time</div>
+      </a>
+      <a class="navbar-item">
+        <input class="input is-rounded is-pulled-right is-danger" type="text" placeholder="Enter filters here">
+      </a>
+  </nav>
+  <script src='https://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.js'></script>
+  <script src="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.min.js"></script>
+  <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v0.0.4/Leaflet.fullscreen.min.js'></script>
+  <script>
+    currentLocation();
+  </script>
+</body>
+
+</html>
