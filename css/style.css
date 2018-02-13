@@ -9,11 +9,7 @@
 .theme {
   color: #FD5656;
 }
-input{
-  color: #FD5656;
-}
 
-placeholder {
-  color: #FD5656;
-  opacity: 1;
+body {
+  overflow-x: hidden;
 }
