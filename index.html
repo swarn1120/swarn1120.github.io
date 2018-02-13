@@ -1,176 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Payal Dance Company | Home</title>
-  <!-- CSS  -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-    <link href="css/scroll.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <meta charset="UTF-8">
+  <title>hangtime | Home</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/app.js"></script>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <link href='https://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.css' rel='stylesheet' />
+  <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.indigo-pink.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v0.0.4/leaflet.fullscreen.css' rel='stylesheet'>
 </head>
-<body class="grey darken-4 white-text">
-  <nav class="transparent" role="navigation">
-    <div class="nav-wrapper container">
-      <a id="logo-container" href="#" class="brand-logo"></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="#ses"><span class="white-text">Sessions</span></a></li>
-        <li><a href="#sch"><span class="white-text">Schedule and Pricing</span></a></li>
-        <li><a href="#abo"><span class="white-text">About Us and Contact</span></a></li>
-      </ul>
-      <ul id="nav-mobile" class="side-nav grey darken-4">
-        <li><a href="#ses"><span class="white-text">Sessions</span></a></li>
-        <li><a href="#sch"><span class="white-text">Schedule and Pricing</span></a></li>
-        <li><a href="#abo"><span class="white-text">About us and Contact</span></a></li>
-      </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons white-text">menu</i></a>
-    </div>
+
+<body>
+  <div id='map'></div>
+  <nav class="navbar is-transparent">
+    <div class="navbar-brand is-transparent">
+      <a class="navbar-item">
+        <div class="subtitle is-3 is-pulled-left"><span class="theme is-bold">hang</span>time</div>
+      </a>
+      <a class="navbar-item is-pushed-right">
+      <input class="input is-rounded is-pushed-right" type="text" placeholder="Rounded input">
+    </a>
   </nav>
-<!--First Parallax with Title-->
-  <div id="index-banner" class="parallax-container">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <br><br>
-        <h1 class="header center white-text text-lighten-2 thin">Payal Dance Company</h3>
-        <div class="row center">
-          <h5 class="header col s12 light scrollspy" id="reg">We Chalak and Jhalak</h5>
-        </div>
-        <div class="row center">
-          <a class="typeform-share button" href="https://juhikumar.typeform.com/to/KtBagC" data-mode="popup" style="display:inline-block;text-decoration:none;background-color:#f33288;color:white;cursor:pointer;font-family:Helvetica,Arial,sans-serif;font-size:27px;line-height:67.5px;text-align:center;margin:0;height:67.5px;padding:0px 45px;border-radius:33px;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:bold;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;" target="_blank">Register </a> <script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share", b="https://embed.typeform.com/"; if(!gi.call(d,id)){ js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script>
-        </div>
-        <br><br>
-      </div>
-    </div>
-    <div class="parallax img1"><img src="images/hand.jpg" alt="Unsplashed background img 1"></div>
-  </div>
-<!--Sessions-->
-  <div class="container">
-    <div class="section">
-      <h3 class="white-text center thin scrollspy" id="ses" >Sessions</h3>
-      <hr color="white">
-      <!--   Icon Section   -->
-      <div class="row">
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center brown-text"></h2>
-            <h5 class="center">Nach</h5>
-            <h6 class="center">Beginners</h5>
-            <p class="light">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          </div>
-        </div>
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center brown-text"></h2>
-            <h5 class="center">Jhalak</h5>
-            <h6 class="center">Juniors</h5>
-            <p class="light">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          </div>
-        </div>
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center brown-text"></h2>
-            <h5 class="center">Chalak</h5>
-            <h6 class="center">Seniors</h5>
-            <p class="light">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!--Schedule and Pricing-->
-  <div class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <div class="row center">
-          <h3 class="header col s12 light thin scrollspy" id="sch">Schedule and Pricing</h3>
-        </div>
-      </div>
-    </div>
-    <div class="parallax img1"><img src="images/hand2.jpg" alt="Unsplashed background img 2" width="100"></div>
-  </div>
-  <div class="container">
-    <div class="section">
-      <h3 class="thin center">Winter Session</h3>
-      <hr color="white">
-      <div class="row">
-          <p class="left-align light">
-            <table class="responsive centered">
-              <thead>
-                <tr>
-                  <th>Session</th>
-                  <th>Pricing</th>
-                  <th>Number of Classes</th>
-                </tr>
-              </thead class="center">
-              <tbody>
-                <tr>
-                  <td>Nach</td>
-                  <td>$15/class</td>
-                  <td>14</td>
-                </tr>
-                <tr>
-                  <td>Jhalak</td>
-                  <td>$15/class</td>
-                  <td>14</td>
-                </tr>
-                <tr>
-                  <td>Chalak</td>
-                  <td>$15/class</td>
-                  <td>14</td>
-                </tr>
-              </tbody>
-            </table>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <div class="row center">
-          <h3 class="header col s12 light thin scrollspy" id="abo">About Juhi</h3>
-        </div>
-      </div>
-    </div>
-    <div class="parallax"><img src="images/girl.jpg" alt="Unsplashed background img 2" width="100"></div>
-  </div>
-
-  <div class="container">
-    <div class="section">
-      <div class="row">
-        <div class="col s12 ">
-          <div class="icon-block">
-            <h2 class="center brown-text"></h2>
-            <h5 class="center">Juhi Kumar</h5>
-            <p class="light">Juhi has been dancing since the age of 3. She has been trained in the Indian classical dance: Bharatanatyam for 9 years, Ballet for 4 years, and was on her high school dance team, Warrior Pride, for 3 years where she was trained in Jazz, Hip Hop, Contemporary, Tap, Ballet. Juhi performed in Austin’s first Bollywood Musical: Om Shanti: Once Upon A Time in Bollywood, as the youngest dancer. Juhi has been teaching at Monsoon Dance for 3 years as a dance instructor and she has made the move from Austin, Texas to Dallas, Texas where she currently attends the University of Texas at Dallas. At UTD, Juhi is a dancer on the Sharara Competitive Bollywood Dance Team.</p>
-          </div>
-        </div>
-        </div>
-        </div>
-      </div>
-    </div>
-  </div>
-    </div>
-  </div>
-  <div class="parallax-container valign-wrapper">
-    <div class="section no-pad-bot">
-      <div class="container">
-        <div class="row center">
-          <h5 class="header col s6 light center-align">Thanks for visitng us</h5>
-        </div>
-      </div>
-    </div>
-    <div class="parallax img1"><img src="images/flower.jpg" alt="Unsplashed background img 3" width="100"></div>
-  </div>
-</div>
-
-  <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="js/materialize.js"></script>
-  <script src="js/init.js"></script>
-  </body>
+  <script src='https://api.tiles.mapbox.com/mapbox.js/v2.2.1/mapbox.js'></script>
+  <script src="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.min.js"></script>
+  <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v0.0.4/Leaflet.fullscreen.min.js'></script>
+  <script>
+    currentLocation();
+  </script>
+</body>
 
 </html>
