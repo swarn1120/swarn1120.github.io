@@ -1,6 +1,6 @@
 (function($) {
   $(function() {
-
+    $('select').material_select();
     $('.slider').slider();
     $(".button-collapse").sideNav();
     $('.datepicker').pickadate({

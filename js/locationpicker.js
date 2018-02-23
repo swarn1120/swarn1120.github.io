@@ -1,48 +1,31 @@
-function initMap() {
-  var input = document.getElementById('pac-input');
-  var autocomplete = new google.maps.places.Autocomplete(input);
-  var place = autocomplete.getPlace();
-  // get lat
-  var lat = place.geometry.location.lat();
-  // get lng
-  var lng = place.geometry.location.lng();
-}
-function getForm(place) {
+$('#us2').locationpicker({
+  enableAutocomplete: true,
+  enableReverseGeocode: true,
+  inputBinding: {
+    locationNameInput: $('#us2-address')
+  },
+  onchanged: function(currentLocation) {
+    var addressComponents = $(this).locationpicker('map').location.addressComponents;
+    var lon = currentLocation.longitude;
+    var lat = currentLocation.latitude;
+    console.log(lon);
+    console.log(lat);
+  }
+});
+function getForm() {
   var strEventName = document.getElementById("eventname");
+  var e = document.getElementById("category");
+  var strUser = e.options[e.selectedIndex].text;
   var date = document.getElementById("date");
   var strStartTime = document.getElementById("starttime");
   var endtime = document.getElementById("endtime");
   var strDescription = document.getElementById("description");
-  var strCategory;
-  if (document.getElementById('test1').checked) {
-    strCategory = document.getElementById('test1').value;
-  } else if (document.getElementById('test2').checked) {
-    strCategory = document.getElementById('test2').value;
-  } else if (document.getElementById('test3').checked) {
-    strCategory = document.getElementById('test3').value;
-  }
-<<<<<<< HEAD
-  console.log(place);
-=======
-
-  var ref = firebase.database().ref();
-  var eventRef = ref.child("Events").child(strEventName.value);
-
-  eventRef.set({
-    eventCreator: "Jerry Huang",
-    eventName: strEventName.value,
-    eventDate: date.value,
-    eventDescription: strDescription.value
-  });
-
-  window.alert("Firebase database updated successfully");
-
->>>>>>> 5790521bac89a914a49e2a6d227743ea68ed891d
-  console.log(strEventName.value);
-  console.log(date.value);
-  console.log(strStartTime.value);
-  console.log(endtime.value);
-  console.log(strDescription.value);
-  console.log(strCategory.value);
+  //I'll comment this stuff so yall can read through it easier
+  console.log(strEventName.value); //event name
+  console.log(strUser); //category
+  console.log(date.value); //date
+  console.log(strStartTime.value); //start time
+  console.log(endtime.value); //end time
+  console.log(strDescription.value); //description
 
 }
