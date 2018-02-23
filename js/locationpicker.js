@@ -1,8 +1,13 @@
 function initMap() {
   var input = document.getElementById('pac-input');
   var autocomplete = new google.maps.places.Autocomplete(input);
+  var place = autocomplete.getPlace();
+  // get lat
+  var lat = place.geometry.location.lat();
+  // get lng
+  var lng = place.geometry.location.lng();
 }
-function getForm() {
+function getForm(place) {
   var strEventName = document.getElementById("eventname");
   var date = document.getElementById("date");
   var strStartTime = document.getElementById("starttime");
@@ -16,6 +21,7 @@ function getForm() {
   } else if (document.getElementById('test3').checked) {
     strCategory = document.getElementById('test3').value;
   }
+  console.log(place);
   console.log(strEventName.value);
   console.log(date.value);
   console.log(strStartTime.value);
