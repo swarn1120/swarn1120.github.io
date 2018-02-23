@@ -38,3 +38,16 @@ var map, infoWindow;
 function addEvent() {
   window.open("../www/event.html", "_self");
 }
+
+function createAccount() {
+
+  var userEmail = document.getElementById('email').value;
+  var userPass = document.getElementById('password').value;
+  window.alert("Create account method ran");
+
+  firebase.auth().createUserWithEmailAndPassword(userEmail, userPass).catch(function(error) {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+  });
+
+}
