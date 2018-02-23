@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>hangtime | Add Event</title>
@@ -28,15 +29,14 @@
     <form class="col s12">
       <div class="row">
         <div class="input-field col s12">
-          <input id="username" type="text" class="validate">
-          <label for="username" class="theme"> Event Name </label>
+          <input id="eventname" type="text">
+          <label for="eventname" class="theme"> Event Name </label>
         </div>
       </div>
-
       <div class="row">
         <div class="col s4">
           <p>
-            <input name="group1" type="radio" id="test1" class="red" />
+            <input name="group1" type="radio" id="test1" value="food" />
             <label for="test1">Food</label>
           </p>
         </div>
@@ -48,14 +48,14 @@
         </div>
         <div class="col s4">
           <p>
-            <input class="" name="group1" type="radio" id="test3" />
+            <input name="group1" type="radio" id="test3" />
             <label for="test3">Music</label>
           </p>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input type="text" class="datepicker">
+          <input type="text" class="datepicker" id="date">
           <label for="datepicker" class="theme">Date</label>
         </div>
       </div>
@@ -63,13 +63,13 @@
         <div class="col s6">
           <div class="input-field col s12">
             <h2 class="header red-text">Start Time</h2>
-            <input type="text" class="timepicker">
+            <input type="text" class="timepicker" id="starttime">
           </div>
         </div>
         <div class="col s6">
           <div class="input-field col s12">
             <h2 class="header red-text">End Time</h2>
-            <input type="text" class="timepicker">
+            <input type="text" class="timepicker" id="endtime">
           </div>
         </div>
       </div>
@@ -77,23 +77,24 @@
         <form class="col s12">
           <div class="row">
             <div class="input-field col s12">
-              <textarea id="textarea1" class="materialize-textarea" data-length="50"></textarea>
+              <textarea id="description" class="materialize-textarea" data-length="50"></textarea>
               <label for="textarea1">Description</label>
             </div>
           </div>
         </form>
       </div>
       <h1 class="title is-5 center-align red-text">Enter a location</h1>
-      <div class="container"><input type="text" id="us2-address" class="center-align " /></div>
       <div class="container">
-        <div id="us2" style="" class="center-align"></div>
+        <input type="text" id="pac-input" class="center-align " />
       </div>
-      <script src='https://maps.google.com/maps/api/js?sensor=false&libraries=places'></script>
-      <script src='https://cdn.rawgit.com/Logicify/jquery-locationpicker-plugin/master/dist/locationpicker.jquery.min.js'></script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1Ljvv0tMPqaW5ei8AH6xe6O9_nEGNLvg&libraries=places&callback=initMap" async defer></script>
+
       <script src="../js/locationpicker.js"></script>
       <br>
       <div class="row center-align">
-        <div class="col push-s3"><a class="button is-rounded is-large red lighten-1 white-text is-pulled-right waves-effect waves-light animated infinite bounce" href="map.html"> &nbsp Add Event &nbsp</a></div>
+        <div class="col push-s3">
+          <a class="button is-rounded is-large red lighten-1 white-text is-pulled-right waves-effect waves-light animated infinite bounce" href="map.html" target="_blank" onclick="getForm()" id="submit"> &nbsp Add Event &nbsp</a>
+        </div>
       </div>
     </form>
   </div>
