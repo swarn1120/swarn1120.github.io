@@ -8,10 +8,11 @@ $('#us2').locationpicker({
     var addressComponents = $(this).locationpicker('map').location.addressComponents;
     var lon = currentLocation.longitude;
     var lat = currentLocation.latitude;
-    getForm(lat,lon);
+    getForm(lon, lat);
   }
 });
-function getForm(lat, lon) {
+
+function getForm(lon, lat) {
   var strEventName = document.getElementById("eventname");
   var e = document.getElementById("category");
   var strUser = e.options[e.selectedIndex].text;
@@ -20,13 +21,12 @@ function getForm(lat, lon) {
   var endtime = document.getElementById("endtime");
   var strDescription = document.getElementById("description");
   var location = document.getElementById("us2-address");
-  console.log(lat);
-  console.log(lon);
-  // Write event data to Firebase
-  var ref = firebase.database().ref();
-  var eventRef = ref.child(strUser).child(strEventName.value);
 
-  eventRef.set({
+
+  // Write event data to Firebase
+  var ref = firebase.database().ref(strUser);
+
+  var data = {
     creator: "Jerry Huang",
     eventName: strEventName.value,
     date: date.value,
@@ -34,7 +34,9 @@ function getForm(lat, lon) {
     startTime: strStartTime.value,
     endTime: endtime.value,
     location: location.value
-  });
+  }
+
+  ref.push(data);
 
   window.alert("Firebase database updated successfully");
 
@@ -45,4 +47,6 @@ function getForm(lat, lon) {
   console.log(strStartTime.value); //start time
   console.log(endtime.value); //end time
   console.log(strDescription.value); //description
+  console.log(lat);
+  console.log(lon);
 }
