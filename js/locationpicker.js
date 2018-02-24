@@ -8,11 +8,10 @@ $('#us2').locationpicker({
     var addressComponents = $(this).locationpicker('map').location.addressComponents;
     var lon = currentLocation.longitude;
     var lat = currentLocation.latitude;
-    console.log(lon);
-    console.log(lat);
+    getForm(lat,lon);
   }
 });
-function getForm() {
+function getForm(lat, lon) {
   var strEventName = document.getElementById("eventname");
   var e = document.getElementById("category");
   var strUser = e.options[e.selectedIndex].text;
@@ -21,8 +20,8 @@ function getForm() {
   var endtime = document.getElementById("endtime");
   var strDescription = document.getElementById("description");
   var location = document.getElementById("us2-address");
-
-
+  console.log(lat);
+  console.log(lon);
   // Write event data to Firebase
   var ref = firebase.database().ref();
   var eventRef = ref.child(strUser).child(strEventName.value);
