@@ -20,6 +20,21 @@ function getForm() {
   var strStartTime = document.getElementById("starttime");
   var endtime = document.getElementById("endtime");
   var strDescription = document.getElementById("description");
+
+
+  // Write event data to Firebase
+  var ref = firebase.database().ref();
+  var eventRef = ref.child("Events").child(strEventName.value);
+
+  eventRef.set({
+    eventCreator: "Jerry Huang",
+    eventName: strEventName.value,
+    eventDate: date.value,
+    eventDescription: strDescription.value
+  });
+
+  window.alert("Firebase database updated successfully");
+
   //I'll comment this stuff so yall can read through it easier
   console.log(strEventName.value); //event name
   console.log(strUser); //category

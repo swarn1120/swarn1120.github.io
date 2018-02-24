@@ -43,11 +43,36 @@ function createAccount() {
 
   var userEmail = document.getElementById('email').value;
   var userPass = document.getElementById('password').value;
-  window.alert("Create account method ran");
 
   firebase.auth().createUserWithEmailAndPassword(userEmail, userPass).catch(function(error) {
     var errorCode = error.code;
     var errorMessage = error.message;
   });
+  window.alert("Create account method ran");
 
+}
+
+function login()
+{
+  var userEmail = document.getElementById('emailLogin').value;
+  var userPass = document.getElementById('passwordLogin').value;
+  window.alert("login method ran");
+
+  firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(error) {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    window.alert("Error : " + errorMessage);
+  });
+}
+
+function logout()
+{
+  firebase.auth().signOut().then(function() {
+ // Sign-out successful.
+ window.alert("sign out worked");
+ window.open("../www/login.html", "_self");
+   }).catch(function(error) {
+     // An error happened.
+     window.alert("sign out didnt work");
+   });
 }
