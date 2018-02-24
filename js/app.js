@@ -45,18 +45,24 @@ function createAccount() {
   var userPass = document.getElementById('password').value;
 
   window.alert("Create user account method ran!");
-
-
-  // firebase.auth().createUserWithEmailAndPassword(userEmail, userPass).catch(function(error) {
-  //   var errorCode = error.code;
-  //   var errorMessage = error.message;
-  // });
-  // window.alert("Create account method ran");
-
 }
-function retrieveData() {
-  var ref = firebase.database().ref('Music');
+
+// Gets object data from Firebase
+function getFoodData() {
+  var ref = firebase.database().ref('Food');
   console.log(ref);
+  ref.on('value', gotData, errData);
+  window.alert("Retrieving data!");
+}
+function getEntertainmentData() {
+  var ref = firebase.database().ref('Entertainment');
+  //console.log(ref);
+  ref.on('value', gotData, errData);
+  window.alert("Retrieving data!");
+}
+function getMusicData() {
+  var ref = firebase.database().ref('Music');
+  //console.log(ref);
   ref.on('value', gotData, errData);
   window.alert("Retrieving data!");
 }
@@ -65,31 +71,46 @@ function login()
 {
   var userEmail = document.getElementById('emailLogin').value;
   var userPass = document.getElementById('passwordLogin').value;
-  window.alert("login method ran");
-
-  // firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(error) {
-  //   var errorCode = error.code;
-  //
-  //   var errorMessage = error.message;
-  //   window.alert("Error : " + errorMessage);
-  // });
-
+  window.alert("Login method ran!");
   // Access Cisco API to create user
-
 
 }
 
 function gotData(data) {
   var values = data.val();
   var keys = Object.keys(values);
-  console.log(keys);
   for (var i = 0; i < keys.length; i++) {
     var k = keys[i];
     var eventName = values[k].eventName;
     var description = values[k].description;
-    console.log(eventName, description);
+    var longitude = values[k].longCoord;
+    var latitude = values[k].latCoord;
+    var pos = {
+      lat: latitude,
+      lng: longitude
+    };
+    var marker = new google.maps.Marker({
+      position: pos,
+      map: map,
+      title: 'Uluru (Ayers Rock)'
+    });
+    var contentString = '<h1 class="title is-4">'+ eventName +'</h1>'+ '<hr color="black">'+
+    '<span>'+ description +'</span><hr color="black">'+
+    '<a class="button is-rounded is-medium theme waves-effect waves-light red lighten-1 white-text">'+
+    '<span class="animated inifinte pulse">&nbsp &nbsp &nbsp Group Chat &nbsp &nbsp &nbsp</span></a>';
+    var infowindow = new google.maps.InfoWindow({
+content: contentString
+});
+    marker.addListener('click', function() {
+      infowindow.open(map, marker);
+    });
+    console.log("Event name: " + eventName);
+    console.log("Description: " + description);
+    console.log("Long: " + longitude);
+    console.log("lat: " + latitude);
   }
 }
+window.onload = gotData;
 
 function errData(err) {
   console.log('Error occured!');

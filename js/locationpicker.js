@@ -1,3 +1,4 @@
+var lon, lat;
 $('#us2').locationpicker({
   enableAutocomplete: true,
   enableReverseGeocode: true,
@@ -6,13 +7,14 @@ $('#us2').locationpicker({
   },
   onchanged: function(currentLocation) {
     var addressComponents = $(this).locationpicker('map').location.addressComponents;
-    var lon = currentLocation.longitude;
-    var lat = currentLocation.latitude;
-    getForm(lon, lat);
+    lon = currentLocation.longitude;
+    lat = currentLocation.latitude;
   }
 });
 
-function getForm(lon, lat) {
+
+/** Add an event to Firebase database */
+function getForm() {
   var strEventName = document.getElementById("eventname");
   var e = document.getElementById("category");
   var strUser = e.options[e.selectedIndex].text;
@@ -27,26 +29,24 @@ function getForm(lon, lat) {
   var ref = firebase.database().ref(strUser);
 
   var data = {
-    creator: "Jerry Huang",
     eventName: strEventName.value,
     date: date.value,
     description: strDescription.value,
     startTime: strStartTime.value,
     endTime: endtime.value,
-    location: location.value
+    location: location.value,
+    longCoord: lon,
+    latCoord: lat
   }
 
   ref.push(data);
 
-  window.alert("Firebase database updated successfully");
-
-  //I'll comment this stuff so yall can read through it easier
-  console.log(strEventName.value); //event name
-  console.log(strUser); //category
-  console.log(date.value); //date
-  console.log(strStartTime.value); //start time
-  console.log(endtime.value); //end time
-  console.log(strDescription.value); //description
-  console.log(lat);
-  console.log(lon);
+  // //I'll comment this stuff so yall can read through it easier
+  // console.log(strEventName.value); //event name
+  // console.log(strUser); //category
+  // console.log(date.value); //date
+  // console.log(strStartTime.value); //start time
+  // console.log(endtime.value); //end time
+  // console.log(strDescription.value); //description
+  // console.log()
 }
