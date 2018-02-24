@@ -12,6 +12,22 @@
   <link rel="stylesheet" href="../css/style.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!--JavaScript -->
+  <script src="https://www.gstatic.com/firebasejs/4.10.0/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-database.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyAl-oHMwxLGd3Y_JJP_0yw5vtXa0qfGrM8",
+      authDomain: "hangtime-344ce.firebaseapp.com",
+      databaseURL: "https://hangtime-344ce.firebaseio.com",
+      projectId: "hangtime-344ce",
+      storageBucket: "hangtime-344ce.appspot.com",
+      messagingSenderId: "896133939170",
+    };
+    firebase.initializeApp(config);
+  </script>
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 </head>
@@ -33,7 +49,7 @@
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="sass.html"><span class="theme">Welcome User</span></a></li>
         <li><a href="badges.html"><span class="theme">Profile</span></a></li>
-        <li><a href="collapsible.html"><span class="theme">Log out</span></a></li>
+        <li><a onclick="logout()"><span class="theme">Log out</span></a></li>
       </ul>
     </div>
     <div class="nav-content">

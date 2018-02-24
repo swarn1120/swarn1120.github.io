@@ -68,11 +68,12 @@ function login()
 function logout()
 {
   firebase.auth().signOut().then(function() {
- // Sign-out successful.
- window.alert("sign out worked");
- window.open("../www/login.html", "_self");
+    // Sign-out successful.
+    window.open("../www/login.html", "_self");
+    window.alert("User successfully signed out!");
    }).catch(function(error) {
      // An error happened.
-     window.alert("sign out didnt work");
+     window.alert("Sign out didnt work");
    });
+
 }
