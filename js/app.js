@@ -39,6 +39,13 @@ function addEvent() {
   window.open("../www/event.html", "_self");
 }
 
+function getAllEvents() {
+  firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
+    var username = (snapshot.val() && snapshot.val().username) || 'Anonymous';
+    // ...
+  });
+}
+
 function createAccount() {
 
   var userEmail = document.getElementById('email').value;
