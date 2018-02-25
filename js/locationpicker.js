@@ -26,10 +26,11 @@ function getForm() {
 
 
   // Write event data to Firebase
-  var ref = firebase.database().ref(strUser);
+  var ref = firebase.database().ref('Event');
 
   var data = {
     eventName: strEventName.value,
+    category: strUser,
     date: date.value,
     description: strDescription.value,
     startTime: strStartTime.value,

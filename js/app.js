@@ -49,39 +49,32 @@ function createAccount() {
   var userEmail = document.getElementById('email').value;
   var userPass = document.getElementById('password').value;
 
+  window.alert("Create user account method ran!");
 }
 
 // Gets object data from Firebase
-function getFoodData() {
-  var ref = firebase.database().ref('Food');
+function getData() {
+  var ref = firebase.database().ref('Event');
   console.log(ref);
   ref.on('value', gotData, errData);
+  window.alert("Retrieving data!");
 }
-
-function getEntertainmentData() {
-  var ref = firebase.database().ref('Entertainment');
-  //console.log(ref);
-  ref.on('value', gotData, errData);
-}
-
-function getMusicData() {
-  var ref = firebase.database().ref('Music');
-  //console.log(ref);
-  ref.on('value', gotData, errData);
-}
-
 function login() {
   var userEmail = document.getElementById('emailLogin').value;
   var userPass = document.getElementById('passwordLogin').value;
+  window.alert("Login method ran!");
   // Access Cisco API to create user
+
 }
 
 function gotData(data) {
   var values = data.val();
   var keys = Object.keys(values);
+  console.log("Attempted to get all data from Firebase");
   for (var i = 0; i < keys.length; i++) {
     var k = keys[i];
     var eventName = values[k].eventName;
+    console.log("Event name: " + eventName);
     var description = values[k].description;
     var date = values[k].date;
     var location = values[k].location;
@@ -106,6 +99,7 @@ function gotData(data) {
     marker.addListener('click', function() {
       infowindow.open(map, marker);
     });
+
     console.log("Event name: " + eventName);
     console.log("Description: " + description);
     console.log("Long: " + longitude);
