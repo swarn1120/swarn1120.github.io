@@ -35,17 +35,15 @@ function initMap() {
     handleLocationError(false, infoWindow, map.getCenter());
   }
 }
-
 function addEvent() {
   window.open("../www/event.html", "_self");
 }
-
 function chatWindow() {
   var widgetEl = document.getElementById('my-ciscospark-widget');
   // Init a new widget
   ciscospark.widget(widgetEl).spaceWidget({
-    accessToken: 'NGFhMDE4MTgtMWI1Ny00NWQ2LTljNjktOWJmZjUxZTA3MzYwNGUyMmViMTItN2Ix',
-    spaceId: 'Y2lzY29zcGFyazovL3VzL1JPT00vOTllN2RlZjAtMWEzYy0xMWU4LWI1OGItYmQ2MzBiODdiMDRl'
+    accessToken: 'YzMzM2Q2NjgtMDQ2MS00NzgxLTk3ZTktMmE0NDU5MmRiYWM0ZGE1ZjEyZTctZGJj',//jerry's id
+    spaceId: 'Y2lzY29zcGFyazovL3VzL1JPT00vNjkwYWM3MjAtMWE1MC0xMWU4LWJjNDQtYWI4NzRmMTM2ZjRl'//red bull groupchat
   });
 }
 
