@@ -23,31 +23,42 @@ function getForm() {
   var endtime = document.getElementById("endtime");
   var strDescription = document.getElementById("description");
   var location = document.getElementById("us2-address");
+  var chatRoomDetails, chatRoomId;
 
+  var data = JSON.stringify({
+    "title": strEventName.value
+  })
+  var xhr = new XMLHttpRequest();
+  xhr.withCredentials = true;
+  xhr.addEventListener("readystatechange", function() {
+    if (this.readyState === 4) {
+      var testObj = this.responseText;
+      chatRoomDetails = JSON.parse( testObj );
+      chatRoomId = chatRoomDetails.id;
+      console.log("The room id is: " + chatRoomId);
 
-  // Write event data to Firebase
-  var ref = firebase.database().ref('Event');
+      // Write event data to Firebase
+      var ref = firebase.database().ref('Event');
 
-  var data = {
-    eventName: strEventName.value,
-    category: strUser,
-    date: date.value,
-    description: strDescription.value,
-    startTime: strStartTime.value,
-    endTime: endtime.value,
-    location: location.value,
-    longCoord: lon,
-    latCoord: lat
-  }
+      var data = {
+        eventName: strEventName.value,
+        roomId: chatRoomId,
+        category: strUser,
+        date: date.value,
+        description: strDescription.value,
+        startTime: strStartTime.value,
+        endTime: endtime.value,
+        location: location.value,
+        longCoord: lon,
+        latCoord: lat
+      }
 
-  ref.push(data);
+      ref.push(data);
+    }
+  });
+  xhr.open("POST", "https://api.ciscospark.com/v1/rooms");
+  xhr.setRequestHeader("Authorization", "Bearer NGFhMDE4MTgtMWI1Ny00NWQ2LTljNjktOWJmZjUxZTA3MzYwNGUyMmViMTItN2Ix");
+  xhr.setRequestHeader("Content-Type", "application/json");
+  xhr.send(data);
 
-  // //I'll comment this stuff so yall can read through it easier
-  // console.log(strEventName.value); //event name
-  // console.log(strUser); //category
-  // console.log(date.value); //date
-  // console.log(strStartTime.value); //start time
-  // console.log(endtime.value); //end time
-  // console.log(strDescription.value); //description
-  // console.log()
 }

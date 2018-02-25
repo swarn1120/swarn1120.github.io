@@ -23,7 +23,6 @@ function initMap() {
       var marker = new google.maps.Marker({
         position: pos,
         map: map,
-        title: 'Uluru (Ayers Rock)'
       });
       marker.addListener('click', function() {
         infowindow.open(map, marker);
@@ -41,12 +40,13 @@ function addEvent() {
   window.open("../www/event.html", "_self");
 }
 
-function createAccount() {
-
-  var userEmail = document.getElementById('email').value;
-  var userPass = document.getElementById('password').value;
-
-  window.alert("Create user account method ran!");
+function chatWindow() {
+  var widgetEl = document.getElementById('my-ciscospark-widget');
+  // Init a new widget
+  ciscospark.widget(widgetEl).spaceWidget({
+    accessToken: 'NGFhMDE4MTgtMWI1Ny00NWQ2LTljNjktOWJmZjUxZTA3MzYwNGUyMmViMTItN2Ix',
+    spaceId: 'Y2lzY29zcGFyazovL3VzL1JPT00vOTllN2RlZjAtMWEzYy0xMWU4LWI1OGItYmQ2MzBiODdiMDRl'
+  });
 }
 
 // Gets object data from Firebase
@@ -55,13 +55,7 @@ function getData() {
   console.log(ref);
   ref.on('value', gotData, errData);
 }
-function login() {
-  var userEmail = document.getElementById('emailLogin').value;
-  var userPass = document.getElementById('passwordLogin').value;
-  window.alert("Login method ran!");
-  // Access Cisco API to create user
 
-}
 function attachSecretMessage(marker, totalContentString) {
   var infowindow = new google.maps.InfoWindow({
     content: totalContentString
@@ -95,6 +89,7 @@ function gotData(data) {
     var k = keys[i];
     var eventName = values[k].eventName;
     console.log("Event name: " + eventName);
+    var chatRoomId = values[k].roomId;
     var category = values[k].category;
     var description = values[k].description;
     var date = values[k].date;
@@ -110,7 +105,7 @@ function gotData(data) {
     var contentString = '<h2 class="title is-4 pink-text">' + eventName + '</h2>' + '<hr color="black">' +
       '<h3 class="subtitle is-5">' + description + '</h3>' + '<hr color="black"><h4 class="center-align subtitle is-6">'
        + startTime + '&nbsp&nbsp|&nbsp&nbsp' + endTime + '<br><br>' + location +
-       '</h4><hr class="black">' +'<div class="center-align"><a class="button is-rounded is-medium theme waves-effect waves-light red lighten-1 white-text center-align"><span class="animated inifinte pulse">&nbsp &nbsp &nbsp Group Chat &nbsp &nbsp &nbsp</span></a></div>';
+       '</h4><hr class="black">' +'<div class="center-align"><a class="button is-rounded is-medium theme waves-effect waves-light red lighten-1 white-text center-align" onclick="chatWindow()" href="chat.html"><span class="animated inifinte pulse">&nbsp &nbsp &nbsp Group Chat &nbsp &nbsp &nbsp</span></a></div>';
     totalContentString.push(contentString);
     for(var i = 0; i < totalContentString.length; i++) {
       var marker = new google.maps.Marker({
@@ -121,6 +116,7 @@ function gotData(data) {
       attachSecretMessage(marker, totalContentString[i]);
     }
     console.log("Event name: " + eventName);
+    console.log("Chat Room ID: " + chatRoomId);
     console.log("Description: " + description);
     console.log("Long: " + longitude);
     console.log("lat: " + latitude);
