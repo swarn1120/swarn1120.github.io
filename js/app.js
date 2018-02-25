@@ -8,10 +8,7 @@ function initMap() {
     },
     zoom: 18
   });
-  var contentString = '<h1 class="title is-4">Event Name</h1>' + '<hr color="black">' +
-    '<span>Description goes here</span><hr color="black">' +
-    '<a class="button is-rounded is-medium theme waves-effect waves-light red lighten-1 white-text">' +
-    '<span class="animated inifinte pulse">&nbsp &nbsp &nbsp Group Chat &nbsp &nbsp &nbsp</span></a>';
+  var contentString = '<h1 class="title is-4 pink-text">Your Current Location</h1>' + '<hr color="black">';
 
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
@@ -57,7 +54,6 @@ function getData() {
   var ref = firebase.database().ref('Event');
   console.log(ref);
   ref.on('value', gotData, errData);
-  window.alert("Retrieving data!");
 }
 function login() {
   var userEmail = document.getElementById('emailLogin').value;
@@ -66,15 +62,40 @@ function login() {
   // Access Cisco API to create user
 
 }
+function attachSecretMessage(marker, totalContentString) {
+  var infowindow = new google.maps.InfoWindow({
+    content: totalContentString
+  });
 
+  marker.addListener('click', function() {
+    infowindow.open(marker.get('map'), marker);
+  });
+}
+
+
+var totalContentString = [];
 function gotData(data) {
   var values = data.val();
   var keys = Object.keys(values);
   console.log("Attempted to get all data from Firebase");
+  var iconBase = '../img/';
+  var icons = {
+         Food: {
+           icon: iconBase + 'fpin.png'
+         },
+         Entertainment: {
+           icon: iconBase + 'entpin.png'
+         },
+         Music: {
+           icon: iconBase + 'mpin.png'
+         }
+  };
+
   for (var i = 0; i < keys.length; i++) {
     var k = keys[i];
     var eventName = values[k].eventName;
     console.log("Event name: " + eventName);
+    var category = values[k].category;
     var description = values[k].description;
     var date = values[k].date;
     var location = values[k].location;
@@ -86,20 +107,19 @@ function gotData(data) {
       lat: latitude,
       lng: longitude
     };
-    var marker = new google.maps.Marker({
-      position: pos,
-      map: map,
-    });
-    var contentString = '<h2 class="title is-4">' + eventName + '</h2>' + '<hr color="black">' +
-      '<h3>' + description + '</h3>' + '<hr color="black"><br><h4 class="center-align">' + startTime + '&nbsp&nbsp|&nbsp&nbsp' + endTime + '<br><br>' + location + '</h4><br><hr class="black">' +
-      '<div class="center-align"><a class="button is-rounded is-medium theme waves-effect waves-light red lighten-1 white-text center-align"><span class="animated inifinte pulse">&nbsp &nbsp &nbsp Group Chat &nbsp &nbsp &nbsp</span></a></div>';
-    var infowindow = new google.maps.InfoWindow({
-      content: contentString
-    });
-    marker.addListener('click', function() {
-      infowindow.open(map, marker);
-    });
-
+    var contentString = '<h2 class="title is-4 pink-text">' + eventName + '</h2>' + '<hr color="black">' +
+      '<h3 class="subtitle is-5">' + description + '</h3>' + '<hr color="black"><h4 class="center-align subtitle is-6">'
+       + startTime + '&nbsp&nbsp|&nbsp&nbsp' + endTime + '<br><br>' + location +
+       '</h4><hr class="black">' +'<div class="center-align"><a class="button is-rounded is-medium theme waves-effect waves-light red lighten-1 white-text center-align"><span class="animated inifinte pulse">&nbsp &nbsp &nbsp Group Chat &nbsp &nbsp &nbsp</span></a></div>';
+    totalContentString.push(contentString);
+    for(var i = 0; i < totalContentString.length; i++) {
+      var marker = new google.maps.Marker({
+        position: pos,
+        map: map,
+        icon: icons[category].icon
+      });
+      attachSecretMessage(marker, totalContentString[i]);
+    }
     console.log("Event name: " + eventName);
     console.log("Description: " + description);
     console.log("Long: " + longitude);
