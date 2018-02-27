@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <title>hangtime | Home</title>
+  <link rel="shortcut icon" href="../img/logo.png" type="image/x-icon" />
   <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
   <!--CSS-->
-  <script src="https://code.s4d.io/widget-space/production/bundle.js"></script>
-  <link rel="stylesheet" href="https://code.s4d.io/widget-space/production/main.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+  <link rel="stylesheet" href="../css/materialize.min.css">
+  <link rel="stylesheet" href="../css/bulma.css">
   <link rel="stylesheet" href="../css/style.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!--JavaScript -->
@@ -30,58 +27,42 @@
     };
     firebase.initializeApp(config);
   </script>
-  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+  <script src="../js/materialize.min.js"></script>
   <script src="../js/app.js">
     < script > getData();
   </script>
 </head>
-<style>
-  #wrapper {
-    position: relative;
-  }
-
-  #over_map {
-    position: absolute;
-    bo: 10px;
-    left: 10px;
-    z-index: 99;
-  }
-</style>
-
 <body onload="getData();">
   <nav class="nav-extended">
     <div class="nav-wrapper white">
       <a href="../index.html" class="brand-logo center black-text"><span class="theme">hang|</span>time</a>
       <a href="#" data-activates="mobile-demo" class="button-collapse theme"><i class="material-icons">menu</i></a>
       <ul class="side-nav" id="mobile-demo">
+        <li><a href="#">Welcome User</a></li>
+        <li><a href="sass.html">Chats</a></li>
+        <li><a href="#">Contact Us</a></li>
         <li><a href="collapsible.html"><a class="waves-effect waves-light btn  red lighten-1">Log Out</a></a>
         </li>
       </ul>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a onclick="retrieveFoodData()"><span class="theme">Welcome User</span></a></li>
-        <li><a onclick="logout()"><span class="theme">Log out</span></a></li>
+        <li><a><span class="theme">Welcome User</span></a></li>
+        <li><a ><span class="theme">Log out</span></a></li>
       </ul>
     </div>
     <div class="nav-content">
       <ul class="tabs white black-text">
         <li class="tab"><a href="#test1" onclick="getData()">Events</a></li>
-        <li class="tab"><a class="#test2"></a></li>
-        <li class="tab "><a href="#test3"></a></li>
         <li class="tab "><a href="#test4" onclick="addEvent()">Add Event</a></li>
       </ul>
     </div>
   </nav>
   <!--MAP-->
     <div id='map'></div>
-  
-
-
   <!--Javascript files part 2-->
   <script src="../js/init.js"></script>
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUddQG-nV6ZDukclxPni70StA5tgltqg8&callback=initMap">
   </script>
   </script>
 </body>
-
 </html>

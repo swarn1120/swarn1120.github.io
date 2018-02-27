@@ -6,7 +6,9 @@ function initMap() {
       lat: -34.397,
       lng: 150.644
     },
-    zoom: 18
+    zoom: 18,
+    disableDefaultUI: true
+
   });
   var contentString = '<h1 class="title is-4 pink-text">Your Current Location</h1>' + '<hr color="black">';
 

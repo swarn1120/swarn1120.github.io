@@ -4,10 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <title>hangtime | Add Event</title>
+  <link rel="shortcut icon" href="img/logo.png" type="image/x-icon" />
+
   <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+  <link rel="stylesheet" href="../css/materialize.min.css">
+  <link rel="stylesheet" href="../css/bulma.css">
   <script src="https://www.gstatic.com/firebasejs/4.10.0/firebase.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-auth.js"></script>
@@ -26,8 +27,8 @@
   </script>
 
   <!-- Compiled and minified JavaScript -->
-  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+  <script src="../js/materialize.min.js"></script>
   <script src="../js/init.js"></script>
   <link rel="stylesheet" href="../css/event.css">
   <script src="../js/app.js"></script>
@@ -35,7 +36,6 @@
   <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
-
 <body>
   <nav class="transparent">
     <div class="nav-wrapper">
@@ -99,11 +99,10 @@
       <br>
       <div class="row center-align">
         <div class="col push-s3">
-          <a class="button is-rounded is-large red lighten-1 white-text is-pulled-right waves-effect waves-light animated infinite bounce" id="submit" onclick="getForm()" href="map.html" target="_blank"> &nbsp Add Event &nbsp</a>
+          <a class="button is-rounded is-large red lighten-1 white-text is-pulled-right waves-effect waves-light" id="submit" onclick="getForm()" href="map.html" target="_blank"> &nbsp Add Event &nbsp</a>
         </div>
       </div>
     </form>
   </div>
 </body>
-
 </html>
