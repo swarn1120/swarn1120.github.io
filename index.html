@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>hangtime | Home</title>
+  <link rel="shortcut icon" href="img/logo.png" type="image/x-icon" />
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css">
@@ -15,50 +16,64 @@
   <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <script src="js/init.js"></script>
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
+<style>
+body  {
+    background-image: url("img/map.jpg");
+    background-color: #cccccc;
 
-<body>
-  <nav class="transparent">
+}
+</style>
+<body class="">
+  <div class="navbar-fixed">
+  <nav class="white">
     <div class="nav-wrapper">
       <a href="#!" class="brand-logo center black-text "><span class="theme">hang|</span>time</div></a>
     </div>
   </nav>
-  <div class="slider">
-    <ul class="slides">
-      <li>
-        <img src="img/map.jpg" class="imgBlur">
-        <!-- random image -->
-        <div class="caption">
-          <h2 class="title is-4 white-text"><span class="theme">hang|</span>time shows you events happening around you</h2>
-        </div>
-      </li>
-      <li>
-        <img src="img/food.jpg">
-        <!-- random image -->
-        <div class="caption left-align">
-          <h3 class="title is-4 white-text">Find food and restraunts</h3>
-        </div>
-      </li>
-      <li>
-        <img src="img/comedy.jpg" width="100%" height="100%">
-        <!-- random image -->
-        <div class="caption center-align">
-          <h3 class="title is-4 white-text">Find entertainment<br>events</h3>
-        </div>
-      </li>
-      <li>
-        <img src="img/concert.jpg">
-        <!-- random image -->
-        <div class="caption center-align">
-          <h3 class="title is-4 white-text">Find live music and concerts</h3>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <br>
-  <div class="center-align"><a class="button is-rounded is-large theme waves-effect waves-light" href="www/login.html"><span class="animated inifinte pulse">&nbsp &nbsp &nbsp Login &nbsp &nbsp &nbsp</span></a></div><br>
-  <div class="center-align"><a class="button is-rounded is-large red lighten-1 white-text  waves-effect waves-light " href="www/signup.html"> &nbsp &nbsp Sign Up &nbsp &nbsp</a></div><br>
+</div>
+  <div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-pic js-tilt" data-tilt>
+					<img src="img/logo.png" alt="IMG">
+				</div>
+				<div class="login100-form validate-form">
+					<span class="login100-form-title">
+						Login to <span class="theme">hang|</span>time
+					</span>
+					<div class="wrap-input100 validate-input" >
+						<input class="input100" type="text" name="email" placeholder="Email">
 
+					</div>
+					<div class="wrap-input100 validate-input" >
+						<input class="input100"  placeholder="Password">
+
+					</div>
+					<div class="container-login100-form-btn">
+						<a href="www/map.html"><button class="login100-form-btn">
+							&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              Login
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+						</button></a>
+					</div>
+					<div class="container-login100-form-btn">
+						<a href="www/signup.html"><button class="login100-form-btn">
+							Create your Account
+						</button></a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<script src="vendor/tilt/tilt.jquery.min.js"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
 </body>
 
 </html>
