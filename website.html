@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>swarnsingh.me</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/x-icon" href="img/logo.png" />
+
+  <style>
+    body,
+    html {
+      height: 100%;
+      margin: 0;
+      font: 400 15px/1.8 "Lato", sans-serif;
+      color: #777;
+    }
+
+    .bgimg-1,
+    .bgimg-2,
+    .bgimg-3 {
+      position: relative;
+      opacity: ;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+    }
+
+    .bgimg-1 {
+      background-image: url("img/img_parallax1.jpg");
+      min-height: 100%;
+    }
+
+    .bgimg-2 {
+      background-image: url("img/img_parallax2.jpg");
+      min-height: 400px;
+    }
+
+    .bgimg-3 {
+      background-image: url("img/music.jpg");
+      min-height: 400px;
+    }
+
+    .caption {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 100%;
+      text-align: center;
+      color: #000;
+    }
+
+    .caption2 {
+      position: absolute;
+      left: 0;
+      top: 2%;
+      width: 100%;
+      text-align: center;
+      color: #000;
+    }
+
+    .caption span.border {
+      background-color: #111;
+      color: #fff;
+      padding: 18px;
+      font-size: 20px;
+      letter-spacing: 10px;
+    }
+
+    h3 {
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      font: 20px "Lato", sans-serif;
+      color: #111;
+    }
+
+    /* Turn off parallax scrolling for tablets and phones */
+
+    @media only screen and (max-device-width: 1024px) {
+      .bgimg-1,
+      .bgimg-2,
+      .bgimg-3 {
+        background-attachment: scroll;
+      }
+    }
+
+    .typewriter {
+      overflow: hidden;
+      /* Ensures the content is not revealed until the animation */
+      border-right: .15em solid orange;
+      /* The typwriter cursor */
+      white-space: nowrap;
+      /* Keeps the content on a single line */
+      margin: 0 auto;
+      /* Gives that scrolling effect as the typing happens */
+      letter-spacing: .15em;
+      /* Adjust as needed */
+      animation: typing 4s steps(40, end),
+      blink-caret .75s step-end infinite;
+    }
+
+    /* The typing effect */
+
+    @keyframes typing {
+      from {
+        width: 0
+      }
+      to {
+        width: 100%
+      }
+    }
+    .image {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      transition: .5s ease;
+      background-color: #008CBA;
+    }
+
+    .container:hover .overlay {
+      opacity: 1;
+    }
+
+    .text {
+      color: white;
+      font-size: 20px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      text-align: center;
+    }
+    /* The typewriter cursor effect */
+
+    @keyframes blink-caret {
+      from,
+      to {
+        border-color: transparent
+      }
+      50% {
+        border-color: orange;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      width: 3px;
+      height: 3px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: rgb(0, 0, 0);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: rgb(255, 165, 0);
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgb(204, 0, 102);
+    }
+
+    .parallax-container {
+      min-height: 900px;
+    }
+  </style>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" media="screen,projection" />
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <script src="js/init.js"></script>
+</head>
+
+<body class="grey darken-4">
+  <div class="bgimg-1">
+    <nav class="transparent">
+      <div class="nav-wrapper transparent">
+        <a href="#" class="brand-logo"></a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <ul class="side-nav grey darken-4 white-text" id="mobile-demo">
+          <li><a href="resume.pdf" class="white-text">Resume</a></li>
+          <li><a href="https://github.com/swarn2099" class="white-text">Github</a></li>
+          <li><a href="#modal1" class="modal-trigger"><span class="white-text">Contact Me</span></a></li>
+          <br><br><br><br><br>
+          <li><div class="center"><img src="img/logo.png" width="200"></div></li>
+        </ul>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li>
+            <a class="waves-effect waves-light btn black" href="resume.pdf">
+              <div class="">Resume</div>
+            </a>
+          </li>
+          <li>
+            <a class="waves-effect waves-light btn black" href="https://github.com/swarn2099">
+              <div class="">Github</div>
+            </a>
+          </li>
+          <li>
+            <a class="waves-effect waves-light btn black modal-trigger" href="#modal1">
+              <div class="">Contact Me</div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="caption">
+      <h1><div class="typewriter"><span class="border">Hey, I'm <br>&nbsp Swarn Singh.</span></div></h1>
+      <div class="row">
+  <div class="col hide-on-small-only m3 l2 right">
+    <ul class="section table-of-contents">
+      <li><a href="#aboutme"><h5 class="white-text">About me</h5></a></li>
+      <li><a href="#portfolio"><h5 class="white-text">Portfolio</h5></a></li>
+      <li><a href="#fuel"><h5 class="white-text">Interests</h5></a></li>
+    </ul>
+  </div>
+</div>
+
+    </div>
+  </div>
+  <h3  id="aboutme" class="center-align white-text section scrollspy"><hr color="black ">About Me<hr color="black "></h3>
+  <div class="row ">
+    <div class="col s12 m4">
+      <div class="card grey darken-4">
+        <span class="card-title"><h5 class="white-text center-align">What's up</h5></span>
+        <hr color="white">
+        <div class="card-content white-text">
+
+          <div class="center-align"><img src="img/potrait.jpeg" height="360"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col s12 m4">
+      <div class="card grey darken-4">
+        <span class="card-title"><h5 class="white-text center-align">More about me</h5></span>
+        <hr color="white">
+        <div class="card-content white-text">
+          <p class="">
+            I am a motivated self-starter with interests varying from creating useful software tools to playing for a rock band. A problem-solver by heart, I have a knack of looking at everyday problems, imagining cool solutions to them and then go ahead and solve
+            them. I like working in groups, providing leadership wherever necessary and helping the team be successful and have a lot of fun in the process.
+          </p><br>
+          <div class="center-align"><img src="img/logo.png" height="200"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col s12 m4">
+      <div class="card grey darken-4">
+        <span class="card-title"><h5 class="white-text center-align">Here are my skills</h5></span>
+        <hr color="white">
+        <div class="card-content white-text">
+          <br>
+          <table>
+            <tbody>
+              <tr>
+                <td><img class="materialboxed" width="100" src="img/html.png"></td>
+                <td><img class="materialboxed" width="100" src="img/css.png"></td>
+                <td><img class="materialboxed" width="100" src="img/js.png"></td>
+              </tr>
+              <tr>
+                <td><img class="materialboxed" width="100" src="img/ionic.png"></td>
+                <td><img class="materialboxed" width="100" src="img/react.png"></td>
+                <td><img class="materialboxed" width="100" src="img/flutter.png"></td>
+              </tr>
+            </tbody>
+          </table>
+          <br>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bgimg-2">
+    <div class="caption">
+      <h2 id="portfolio" class="section scrollspy"><div class="typewriter"><span class="border">Here's my portfolio.</span></div></h2>
+    </div>
+  </div>
+  <h4 class="center-align white-text"><hr color="black ">Hackathons | Start Ups <hr color="black "></h4>
+  <div class="row ">
+    <div class="col s12 m4 ">
+      <div class="card grey lighten-5">
+        <div class="card-content green-text ">
+          <a class="waves-effect waves-light btn right green" href="http://tunify.xyz">Try Tunify</a>
+          <span class="card-title"><h5 class="green-text">Tunify<br><h6>Microsoft Title Sponsor Award at HackTX</h6></h5></span>
+          <hr color="green">
+          <p>Putting music on a map.<br>Create interactive music communities through location based playlist tagging. We are creating geo-fenced Spotify playlist that are community driven and made.</p><br>
+          <a href="https://github.com/swarn2099/Tunify"><i class="material-icons medium green-text" >code</i></a>
+          <a href="https://devpost.com/software/tunify"><i class="material-icons medium right green-text">web</i></a>
+        </div>
+      </div>
+    </div>
+    <div class="col s12 m4 ">
+      <div class="card grey lighten-5">
+        <div class="card-content blue-text ">
+          <a class="waves-effect waves-light btn right blue small" href="http://flyamerican.today">Try flyAmerican</a>
+          <span class="card-title "><h5 class="blue-text">flyAmerican.today<br><h6>American Airlines Title Sponsor Award at TamuHack</h6></h5></span>
+          <hr color="blue">
+          <p>The ultimate pre-boarding experience.<br>We wanted create an engaging experience at the gate for passengers which would encourage them to be early while incentivizing American Airlines flights and program</p><br>
+          <a href="https://github.com/swarn2099/swarn2099.github.io"><i class="material-icons medium blue-text" >code</i></a>
+          <a href="https://devpost.com/software/flyamerican-today"><i class="material-icons medium right blue-text">web</i></a>
+        </div>
+      </div>
+    </div>
+    <div class="col s12 m4 ">
+      <div class="card grey lighten-5">
+        <div class="card-content pink-text ">
+          <a class="waves-effect waves-light btn right pink" href="http://hangtime.io">Try hang|time</a>
+          <span class="card-title "><h5 class="pink-text">hang|time<br><h6>Cisco Award at HackUTD</h6></h5></span>
+          <hr color="pink">
+          <p>Crrowdsourcing event discovery.<br> We let people find events around them and make plans by chatting with other people going there.</p><br>
+          <a href="https://github.com/swarn2099/hangtime"><i class="material-icons medium pink-text" >code</i></a>
+          <a href="https://devpost.com/software/hang-time"><i class="material-icons medium right pink-text">web</i></a>
+        </div>
+      </div>
+    </div>
+    <div class="col s12 m4 push-m2">
+      <div class="card grey lighten-5">
+        <div class="card-content teal-text ">
+          <a class="waves-effect waves-light btn right teal" href="https://chrome.google.com/webstore/detail/planview/ahdmabmmnnkachilcgkacffibgbgfoln">Try PlanVIEW</a>
+          <span class="card-title "><h5 class="teal-text">PlanVIEW</h5></span>
+          <hr color="teal">
+          <p>PlanVIEW is dashboard for highschool students.<br>Put all your important links, notes and other info for classes all in one place. Moreover, it syncs with your Google Calendar for a smooth experience.</p><br>
+          <a href="https://github.com/HexRweb/PlanVIEW"><i class="material-icons medium teal-text" >code</i></a>
+          <a href="https://devpost.com/software/hang-time"><i class="material-icons medium right teal-text">web</i></a>
+        </div>
+      </div>
+    </div>
+    <div class="col s12 m4 push-m2">
+      <div class="card grey lighten-5">
+        <div class="card-content black-text ">
+          <a class="waves-effect waves-light btn right black">Get Hyped</a>
+          <span class="card-title "><h5 class="black-text">Coming Soon</h5></span>
+          <hr color="black">
+          <p>Get Hyped!New project coming soon<br> Hint: A chatbot, Amazon, and gifts monthly.<br><br></p><br>
+          <i class="material-icons medium right">web</i>
+          <i class="material-icons medium">code</i>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+  <div class="bgimg-3">
+    <div class="caption">
+      <h1 id="fuel" class="section scrollspy"><div class="typewriter"><span class="border">What fuels me.</span></div></h1>
+    </div>
+  </div>
+  <h5 class="center-align white-text"><hr color="black ">Guitar | Taekwondo | Music <hr color="black "></h5>
+  <div class="row ">
+    <div class="col s12 m4 ">
+      <div class="card grey darken-4">
+        <div class="card-content white-text ">
+          <span class="card-title"><h5 class="white-text center-align">Guitar<br><h6>Been playing for 8 years. </h6></h5></span>
+          <hr color="white"> As a kid, I was super indecisive about which instrument I wanted to play. As a result, I ended up learning piano, violin, viola, and even the bass. Finally, I settled on the guitar 8 years ago and haven't changed since. Growing up listening
+          to classic rock stations with my dad in the car, I loved listening to bands like Guns N' Roses, Journey, and Pink Floyd. Here is a perfomance I gave in highschool: <br><br>
+          <div class="video-container">
+            <iframe width="200" height="300" src="https://www.youtube.com/embed/H-muZeuMWB0" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col s12 m4 ">
+      <div class="card grey darken-4">
+        <div class="card-content white-text ">
+          <span class="card-title "><h5 class="white-text center-align">Taekwondo<br><h6>Throwing punches since I was 10.</h6></h5></span>
+          <hr color="orange"><br>
+          <div class="center"><img src="img/tkd.png" width="200"></div>
+          <p>I started practicing Taekwondo in 7th grade. At first, I think it's fair to say that I abosolutely hated it. I was put into the adult
+          class with other higher degree belts and so I was the 7 p.m. adult class's punching bag. As I got into highschool and progressed through thea
+        belts, I started to notice my punches getting stronger, my kicks getting sharper but most importantly, my processing of what's going to happen next
+      increase. I truly noticed the difference when I got my black-belt in highschool. My discipline and focus had definetly increased due to martial arts and I
+    continue to thank my instructors Mr. Martin Aherne and Ms. Ginger Jackson till this day.</p><br>
+        </div>
+      </div>
+    </div>
+    <div class="col s12 m4 ">
+      <div class="card grey darken-4">
+        <div class="card-content pink-text ">
+          <span class="card-title "><h4 class="white-text center-align">Spotify Mood Playlist<br></h4></span>
+          <hr color="green"><br>
+          <div class="center-align">
+            <iframe class="center" src="https://open.spotify.com/embed/user/swarn2099/playlist/7b0814nammSxRMsuzayeHr" width="300" height="450" frameborder="0" allowtransparency="true"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bgimg-1 ">
+    <div class="caption ">
+      <span class="border ">Thats all folks.</span><br><br><br>
+      <img class=""src="img/logo.png" width="200">
+
+    </div>
+  </div>
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal grey darken-4">
+    <div class="modal-content white-text">
+      <h4>Contact Me</h4>
+      <div class="right"><img src="img/logo.png" width="200"></div>
+      <hr color="white">
+      <br>
+      <h4><i class="material-icons left">phone</i>512-913-0322</h4><br>
+      <hr color="orange">
+      <br>
+      <h4><i class="material-icons">email</i>&nbsp swarn.singh@utdallas.edu</h4>
+      <br>
+      <h4><i class="material-icons">email</i>&nbsp swarn2099@gmail.com</h4>
+    </div>
+    <div class="modal-footer grey darken-4">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat white-text">Close</a>
+    </div>
+  </div>
+</body>
+
+</html>
