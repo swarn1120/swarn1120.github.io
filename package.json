@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/felicegattuso/Datedropper3#readme",
   "dependencies": {
+    "bulma": "^0.6.2",
     "jquery": "^3.3.1"
   }
 }
