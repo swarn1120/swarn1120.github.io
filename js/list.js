@@ -18,12 +18,10 @@ function gotData(data) {
     var location = values[k].location;
     var startTime = values[k].startTime;
     var endTime = values[k].endTime;
-    console.log(eventName);
     var card = '<div class="card"><div class="card-content"><div class="media-content"><p class="title is-4">'+ eventName + '</p></div></div><div class="content">'+ description +'</div></div></div>';
     totalContentString.push(card);
     for (var j = 0; j < totalContentString.length; j++) {
       var cardFilled = totalContentString[j];
-      console.log(cardFilled)
     }
   }
 }

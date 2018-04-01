@@ -7,7 +7,7 @@ function initMap() {
       lng: -96.750099
     },
     zoom: 18,
-    
+
     disableDefaultUI: true
 
   });
@@ -48,7 +48,7 @@ function getData() {
 
 function attachSecretMessage(marker, totalContentString) {
   var infowindow = new google.maps.InfoWindow({
-    content: totalContentString
+    content: '<div class="scrollFix">'+totalContentString+'</div>'
   });
 
   marker.addListener('click', function() {
@@ -81,10 +81,10 @@ function gotData(data) {
     console.log(eventName);
     console.log(location);
     var mapLink = 'https://www.google.com/maps/place/'+location;
-    var contentString = '<h6 class="is-size-5-mobile has-text-centered has-text-weight-bold has-text-primary">' + eventName + '</h6><br>'+
+    var contentString = '<div class="scrollFix"><h6 class="is-size-5-mobile has-text-centered has-text-weight-bold has-text-primary">' + eventName + '</h6><br>'+
       '<h6 class="is-size-7-mobile has-text-centered has-text-weight-light"><section class="container">' + description + '</section></h6>' + '<h6 class="is-size-7-mobile has-text-centered has-text-weight-light is-italic">'
        + startTime + ' -  ' + endTime +
-       '</h6><br>' +'<div class="columns is-mobile"><div class="column"></div><div class="column"><a class="button is-rounded is-link"><span class="">Pool</span></a></div><div class="column"><a class="button is-rounded is-success" href="'+mapLink+'"><span class="">Map</span></a></div><div class="column"></div></div>';
+       '</h6><br><br>' +'<div class="columns is-mobile"><div class="column"></div><div class="column"><a class="button is-rounded is-link"><span class="">Pool</span></a></div><div class="column"><a class="button is-rounded is-success" href="'+mapLink+'"><span class="">Map</span></a></div><div class="column"></div></div>';
     totalContentString.push(contentString);
     for(var j = 0; j < totalContentString.length; j++) {
       var marker = new google.maps.Marker({
