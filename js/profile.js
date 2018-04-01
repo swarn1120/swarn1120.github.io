@@ -8,4 +8,4 @@ if (user != null) {
     console.log("  Email: " + profile.email);
     console.log("  Photo URL: " + profile.photoURL);
   });
-}value);
+}
