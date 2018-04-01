@@ -5,7 +5,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>marco/polo | home</title>
-  <link rel="stylesheet" href="../css/bulma.css">
+  <link rel="stylesheet" href="../node_modules/bulma/css/bulma.css">
+  <link rel="stylesheet" href="../css/materialize.min.css">
   <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.10.0/firebase.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-app.js"></script>
@@ -28,8 +29,7 @@
   <script>
     getData();
   </script>
-</head>
-<style>
+  <style>
   html {
     overflow-y: hidden;
     overflow-x: hidden;
@@ -38,32 +38,35 @@
   #map {
     height: 900px;
   }
-</style>
-<nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a class="navbar-item is-center" href="map.html">
-      <img src="../img/logo.png" width="150" height="100">
-    </a>
-    <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
+
+  </style>
+</head>
+<div class="navbar-fixed">
+<nav class="white black-text">
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo black-text"><span class="teal-text  lighten-3-text">marco</span>/<span class="blue-text darken-3-text">polo</span></a>
   </div>
 </nav>
+</div>
 <nav class="navbar is-fixed-bottom" role="navigation" aria-label="main navigation">
   <div class="tabs is-toggle is-fullwidth is-medium">
     <ul>
-      <li>
+      <li class="is-primary">
         <a href="map.html">
-          <span class="icon is-small"><i class="fas fa-map"></i></span>
-          <span>Map</span>
+          <span class="icon is-large"><i class="fas fa-map"></i></span>
+          <span class=""></span>
         </a>
       </li>
       <li>
         <a href="list.html">
-          <span class="icon is-small"><i class="fas fa-list"></i></span>
-          <span>List</span>
+          <span class="icon is-large"><i class="fas fa-list"></i></span>
+          <span class=""></span>
+        </a>
+      </li>
+      <li>
+        <a href="profile.html">
+          <span class="icon is-large"><i class="fas fa-address-card"></i></span>
+          <span class=""></span>
         </a>
       </li>
     </ul>
@@ -71,10 +74,8 @@
 </nav>
 
 <body onload="getData();">
-  <section class="container">
-    <section id='map'>
+    <div id='map'>
       </div>
-    </section>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwOo8vkPwF9-lteyjpdqDyn5RzKmjoKt4&callback=initMap">
     </script>
 </body>

@@ -7,10 +7,11 @@ function initMap() {
       lng: -96.750099
     },
     zoom: 18,
+    
     disableDefaultUI: true
 
   });
-  var contentString = '<h1 class="title is-4 pink-text">Your Current Location</h1>' + '<hr color="black">';
+  var contentString = '<h6 class="is-size-6-mobile">Current Location</h6>';
 
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
@@ -53,7 +54,11 @@ function attachSecretMessage(marker, totalContentString) {
   marker.addListener('click', function() {
     infowindow.open(marker.get('map'), marker);
   });
+  google.maps.event.addListener(map, "click", function(event) {
+    infowindow.close();
+});
 }
+
 var totalContentString = [];
 function gotData(data) {
   var values = data.val();
@@ -73,10 +78,13 @@ function gotData(data) {
       lat: latitude,
       lng: longitude
     };
+    console.log(eventName);
+    console.log(location);
+    var mapLink = 'https://www.google.com/maps/place/'+location;
     var contentString = '<h6 class="is-size-5-mobile has-text-centered has-text-weight-bold has-text-primary">' + eventName + '</h6><br>'+
-      '<h6 class="is-size-7-mobile has-text-centered has-text-weight-light">' + description + '</h6>' + '<h6 class="is-size-7-mobile has-text-centered has-text-weight-light is-italic">'
+      '<h6 class="is-size-7-mobile has-text-centered has-text-weight-light"><section class="container">' + description + '</section></h6>' + '<h6 class="is-size-7-mobile has-text-centered has-text-weight-light is-italic">'
        + startTime + ' -  ' + endTime +
-       '</h6><br>' +'<a class="button is-rounded is-link"><span class="">Pool</span></a>'+'&nbsp <a class="button is-rounded is-success"><span class="">Map</span></a>';
+       '</h6><br>' +'<div class="columns is-mobile"><div class="column"></div><div class="column"><a class="button is-rounded is-link"><span class="">Pool</span></a></div><div class="column"><a class="button is-rounded is-success" href="'+mapLink+'"><span class="">Map</span></a></div><div class="column"></div></div>';
     totalContentString.push(contentString);
     for(var j = 0; j < totalContentString.length; j++) {
       var marker = new google.maps.Marker({
