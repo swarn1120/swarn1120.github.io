@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>marco/polo | home</title>
+  <link rel="stylesheet" href="css/bulma.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.10.0/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-database.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyCvM4gKXyUW58BrDOnqU3bJBGnCNiexCzI",
+      authDomain: "marco-polo-c90db.firebaseapp.com",
+      databaseURL: "https://marco-polo-c90db.firebaseio.com",
+      projectId: "marco-polo-c90db",
+      storageBucket: "marco-polo-c90db.appspot.com",
+      messagingSenderId: "399167559169"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/app.js"></script>
+  <script>getData();</script>
+</head>
+<style>
+#map {
+  height: 900px;
+}
+body{
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+   </style>
+<nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="#">
+      <div class="columns is-mobile">
+        <div class="column">
+      <img src="img/logo.png" width="130" height="85">
+    </div>
+    <div class="column is-7">
+      Welcome User!
+    </div>
+  </div>
+    </a>
+  </div>
+</nav>
+<nav class="navbar is-fixed-bottom" role="navigation" aria-label="main navigation">
+    <div class="tabs is-centered">
+      <ul>
+        <li><a><span class="title is-5">Map</span></a></li>
+        <li><a><span  class="title is-5">List</span></a></li>
+        <li><a href="add.html"><span  class="title is-5">Add</span></a></li>
+      </ul>
+    </div>
+</nav>
+<body onload="getData();">
+  <section class="container">
+    <div id='map'></div>
+  </section>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwOo8vkPwF9-lteyjpdqDyn5RzKmjoKt4&callback=initMap">
+  </script>
+</body>
+
+</html>

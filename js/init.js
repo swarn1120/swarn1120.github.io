@@ -1,8 +1,5 @@
 (function($) {
   $(function() {
-    $('.modal').modal
-    $('.scrollspy').scrollSpy();
-    $('.parallax').parallax();
     $('select').material_select();
     $('.slider').slider();
     $(".button-collapse").sideNav();
