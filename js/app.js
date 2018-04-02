@@ -1,4 +1,6 @@
 var map, infoWindow;
+var iconBase = '../img/';
+var clearCard = ' ';
 
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
@@ -26,6 +28,7 @@ function initMap() {
       var marker = new google.maps.Marker({
         position: pos,
         map: map,
+        icon: iconBase + 'blue.png'
       });
       marker.addListener('click', function() {
         infowindow.open(map, marker);
@@ -47,15 +50,11 @@ function getData() {
 }
 
 function attachSecretMessage(marker, totalContentString) {
-  var infowindow = new google.maps.InfoWindow({
-    content: '<div class="scrollFix">'+totalContentString+'</div>'
-  });
-
   marker.addListener('click', function() {
-    infowindow.open(marker.get('map'), marker);
+    document.getElementById("over_map").innerHTML = totalContentString;
   });
   google.maps.event.addListener(map, "click", function(event) {
-    infowindow.close();
+    document.getElementById("over_map").innerHTML = clearCard;
 });
 }
 
@@ -81,15 +80,13 @@ function gotData(data) {
     console.log(eventName);
     console.log(location);
     var mapLink = 'https://www.google.com/maps/place/'+location;
-    var contentString = '<div class="scrollFix"><h6 class="is-size-5-mobile has-text-centered has-text-weight-bold has-text-primary">' + eventName + '</h6><br>'+
-      '<h6 class="is-size-7-mobile has-text-centered has-text-weight-light"><section class="container">' + description + '</section></h6>' + '<h6 class="is-size-7-mobile has-text-centered has-text-weight-light is-italic">'
-       + startTime + ' -  ' + endTime +
-       '</h6><br><br>' +'<div class="columns is-mobile"><div class="column"></div><div class="column"><a class="button is-rounded is-link"><span class="">Pool</span></a></div><div class="column"><a class="button is-rounded is-success" href="'+mapLink+'"><span class="">Map</span></a></div><div class="column"></div></div>';
+    var contentString = '<div class="row"><div class="col s12 m6"><div class="card white teal-text"><div class="card-content teal-text"><span class="card-title">'+ eventName + '</span><p>' + description + '</p><p>' + date +  '</p></div><div class="card-action"><a class="button is-primary is-rounded"><span class="white-text">&nbsp Pool &nbsp</span></a><a class="button is-warning is-rounded"><span class="white-text">Map</span></a><a class="button is-danger is-rounded"><span class="white-text">More Info</span></a></div></div></div></div></div>';
     totalContentString.push(contentString);
     for(var j = 0; j < totalContentString.length; j++) {
       var marker = new google.maps.Marker({
         position: pos,
         map: map,
+        icon: iconBase + 'red.png'
       });
       attachSecretMessage(marker, totalContentString[i]);
     }

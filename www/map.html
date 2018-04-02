@@ -30,58 +30,74 @@
     getData();
   </script>
   <style>
-  html {
-    overflow-y: hidden;
-    overflow-x: hidden;
-  }
+    html {
+      overflow-y: hidden;
+      overflow-x: hidden;
+    }
 
-  #map {
-    height: 900px;
-  }
-  .scrollFix {
+    #map {
+      height: 900px;
+    }
+
+    .scrollFix {
       overflow: hidden;
       white-space: nowrap;
       word-wrap: break-word;
-  }
+    }
+
+    #wrapper {
+      position: relative;
+    }
+
+    #over_map {
+      position: absolute;
+      top: 410px;
+      left: 10px;
+      z-index: 99;
+    }
   </style>
 </head>
 <div class="navbar-fixed">
-<nav class="white black-text">
-  <div class="nav-wrapper">
-    <a href="#" class="brand-logo black-text"><span class="teal-text  lighten-3-text">marco</span>/<span class="blue-text darken-3-text">polo</span></a>
-  </div>
-</nav>
+  <nav class="white black-text">
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo black-text"><span class="teal-text  lighten-3-text">marco</span>/<span class="blue-text darken-3-text">polo</span></a>
+    </div>
+  </nav>
 </div>
-<nav class="navbar is-fixed-bottom" role="navigation" aria-label="main navigation">
-  <div class="tabs is-toggle is-fullwidth is-medium">
-    <ul>
-      <li class="is-primary">
-        <a href="map.html">
-          <span class="icon is-large"><i class="fas fa-map"></i></span>
+<div id="wrapper">
+
+  <nav class="navbar is-fixed-bottom" role="navigation" aria-label="main navigation">
+    <div class="tabs is-toggle is-fullwidth is-medium">
+      <ul>
+        <li class="is-primary">
+          <a href="map.html">
+          <span class="icon is-large"><i class="fas fa-map is-large"></i></span>
           <span class=""></span>
         </a>
-      </li>
-      <li>
-        <a href="list.html">
-          <span class="icon is-large"><i class="fas fa-list"></i></span>
+        </li>
+        <li>
+          <a href="list.html">
+          <span class="icon is-large"><i class="fas fa-bell is-large"></i></span>
           <span class=""></span>
         </a>
-      </li>
-      <li>
-        <a href="profile.html">
-          <span class="icon is-large"><i class="fas fa-address-card"></i></span>
+        </li>
+        <li>
+          <a href="profile.html">
+          <span class="icon is-large"><i class="fas fa-cog is-large"></i></span>
           <span class=""></span>
         </a>
-      </li>
-    </ul>
-  </div>
-</nav>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div id="over_map"></div>
+</div>
 
 <body onload="getData();">
-    <div id='map'>
-      </div>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwOo8vkPwF9-lteyjpdqDyn5RzKmjoKt4&callback=initMap">
-    </script>
+  <div id='map'></div>
+
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwOo8vkPwF9-lteyjpdqDyn5RzKmjoKt4&callback=initMap">
+  </script>
 </body>
 
 </html>
