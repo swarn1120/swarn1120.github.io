@@ -1,5 +1,5 @@
 var map, infoWindow;
-var iconBase = '../img/';
+
 var clearCard = ' ';
 
 function initMap() {
@@ -13,6 +13,74 @@ function initMap() {
     disableDefaultUI: true
 
   });
+  var styles = {
+    default: null,
+    hide:[
+    {
+      "featureType": "administrative",
+      "elementType": "geometry",
+      "stylers": [
+        {
+          "visibility": "off"
+        }
+      ]
+    },
+    {
+      "featureType": "administrative.land_parcel",
+      "elementType": "labels",
+      "stylers": [
+        {
+          "visibility": "off"
+        }
+      ]
+    },
+    {
+      "featureType": "poi",
+      "stylers": [
+        {
+          "visibility": "off"
+        }
+      ]
+    },
+    {
+      "featureType": "poi",
+      "elementType": "labels.text",
+      "stylers": [
+        {
+          "visibility": "on"
+        }
+      ]
+    },
+    {
+      "featureType": "road",
+      "elementType": "labels.icon",
+      "stylers": [
+        {
+          "visibility": "on"
+        }
+      ]
+    },
+    {
+      "featureType": "road.local",
+      "elementType": "labels",
+      "stylers": [
+        {
+          "visibility": "on"
+        }
+      ]
+    },
+    {
+      "featureType": "transit",
+      "stylers": [
+        {
+          "visibility": "off"
+        }
+      ]
+    }
+  ]
+  };
+  map.setOptions({styles: styles['hide']});
+
   var contentString = '<h6 class="is-size-6-mobile">Current Location</h6>';
 
   if (navigator.geolocation) {
@@ -28,7 +96,7 @@ function initMap() {
       var marker = new google.maps.Marker({
         position: pos,
         map: map,
-        icon: iconBase + 'blue.png'
+        icon: '../img/blue.png'
       });
       marker.addListener('click', function() {
         infowindow.open(map, marker);
@@ -62,10 +130,22 @@ var totalContentString = [];
 function gotData(data) {
   var values = data.val();
   var keys = Object.keys(values);
-  console.log("Attempted to get all data from Firebase");
+  var iconBase = '../img/';
+  var icons = {
+         Food: {
+           icon: iconBase + 'yellow.png'
+         },
+         Entertainment: {
+           icon: iconBase + 'red.png'
+         },
+         Music: {
+           icon: iconBase + 'purple.png'
+         }
+       };
   for (var i = 0; i < keys.length; i++) {
     var k = keys[i];
     var eventName = values[k].eventName;
+    var category = values[k].category;
     var description = values[k].description;
     var date = values[k].date;
     var location = values[k].location;
@@ -80,13 +160,13 @@ function gotData(data) {
     console.log(eventName);
     console.log(location);
     var mapLink = 'https://www.google.com/maps/place/'+location;
-    var contentString = '<div class="row"><div class="col s12 m6"><div class="card white teal-text"><div class="card-content teal-text"><span class="card-title">'+ eventName + '</span><p>' + description + '</p><p>' + date +  '</p></div><div class="card-action"><a class="button is-primary is-rounded"><span class="icon  has-text-light"><i class="fas fa-comments"></i></span></a><a class="button is-warning is-rounded"><span class="icon has-text-light"><i class="fas fa-map-marker-alt"></i></span></a><a class="button is-danger is-rounded"><span class="icon has-text-light"><i class="fas fa-info-circle"></i></span></a></div></div></div></div></div>';
+    var contentString = '<div class="row"><div class="col s12"><div id="rcorners2"><div class="black-text"><h5 class="center-align teal-text  lighten-3-text">'+ eventName + '</h5><p>' + description + '</p><br><p class="center-align">' + startTime +' - ' +endTime+' | ' + date +  '</p></div> <br><div class="row center-align"><div class="col s4"><a class="button is-primary is-rounded is-large"><span class="icon  has-text-light is-large"><i class="fas fa-comments is-large"></i></span></a></div><div class="col s4"><a class="button is-dark is-rounded is-large" href="'+mapLink+'"><span class="icon has-text-light"><i class="fas fa-map-marker-alt"></i></span></a></div><div class="col s4"><a class="button is-link is-rounded is-large"><span class="icon has-text-light"><i class="fas fa-info-circle"></i></span></a></div></div></div></div></div></div></div>';
     totalContentString.push(contentString);
     for(var j = 0; j < totalContentString.length; j++) {
       var marker = new google.maps.Marker({
         position: pos,
         map: map,
-        icon: iconBase + 'red.png'
+        icon: icons[category].icon
       });
       attachSecretMessage(marker, totalContentString[i]);
     }

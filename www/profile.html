@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>marco/polo | profile</title>
-  <link rel="styleshxeet" href="../css/bulma.css">
+  <link rel="stylesheet" href="../css/bulma.css">
   <link rel="stylesheet" href="../css/materialize.min.css">
   <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.10.0/firebase.js"></script>
@@ -25,6 +25,8 @@
     firebase.initializeApp(config);
   </script>
   <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+  <script src="../js/list.js"></script>
+  <script>getData();</script>
 </head>
 <div class="navbar-fixed">
 <nav class="white black-text">
@@ -36,28 +38,25 @@
 <nav class="navbar is-fixed-bottom" role="navigation" aria-label="main navigation">
   <div class="tabs is-toggle is-fullwidth is-medium">
     <ul>
-      <li class="is-primary">
+      <li class="is-primary is-large">
         <a href="map.html">
-          <span class="icon is-large"><i class="fas fa-map"></i></span>
-          <span class=""></span>
-        </a>
+        <span class="icon is-large has-text-primary"><i class="fas fa-map is-large"></i></span>
+      </a>
       </li>
       <li>
-        <a href="list.html">
-          <span class="icon is-large"><i class="fas fa-list"></i></span>
-          <span class=""></span>
-        </a>
+        <a href="notif.html">
+        <span class="icon is-large has-text-dark"><i class="fas fa-bell is-large"></i></span>
+      </a>
       </li>
       <li>
         <a href="profile.html">
-          <span class="icon is-large"><i class="fas fa-address-card"></i></span>
-          <span class=""></span>
-        </a>
+        <span class="icon is-large has-text-link"><i class="fas fa-cog is-large"></i></span>
+      </a>
       </li>
     </ul>
   </div>
 </nav>
-<body>
+<body onload="getData();">
   <section class="container"><br><br>
   </section>
 </body>

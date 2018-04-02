@@ -16,6 +16,8 @@ $('#us2').locationpicker({
 /** Add an event to Firebase database */
 function getForm() {
   var strEventName = document.getElementById("eventname");
+  var e = document.getElementById("category");
+  var strUser = e.options[e.selectedIndex].text;
   var date = document.getElementById("date");
   var strStartTime = document.getElementById("starttime");
   var endtime = document.getElementById("endtime");
@@ -32,6 +34,7 @@ function getForm() {
 
       var data = {
         eventName: strEventName.value,
+        category: strUser,
         date: date.value,
         description: strDescription.value,
         startTime: strStartTime.value,

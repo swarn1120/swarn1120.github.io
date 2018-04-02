@@ -1,6 +1,9 @@
 (function($) {
   $(function() {
     $('select').material_select();
+    var elem = document.querySelector('.fixed-action-btn');
+ var instance = M.FloatingActionButton.init(elem, options);
+    $('.fixed-action-btn').floatingActionButton();
     $('.slider').slider();
     $(".button-collapse").sideNav();
     $('.datepicker').pickadate({
