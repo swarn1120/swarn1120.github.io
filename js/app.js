@@ -80,7 +80,7 @@ function gotData(data) {
     console.log(eventName);
     console.log(location);
     var mapLink = 'https://www.google.com/maps/place/'+location;
-    var contentString = '<div class="row"><div class="col s12 m6"><div class="card white teal-text"><div class="card-content teal-text"><span class="card-title">'+ eventName + '</span><p>' + description + '</p><p>' + date +  '</p></div><div class="card-action"><a class="button is-primary is-rounded"><span class="white-text">&nbsp Pool &nbsp</span></a><a class="button is-warning is-rounded"><span class="white-text">Map</span></a><a class="button is-danger is-rounded"><span class="white-text">More Info</span></a></div></div></div></div></div>';
+    var contentString = '<div class="row"><div class="col s12 m6"><div class="card white teal-text"><div class="card-content teal-text"><span class="card-title">'+ eventName + '</span><p>' + description + '</p><p>' + date +  '</p></div><div class="card-action"><a class="button is-primary is-rounded"><span class="icon  has-text-light"><i class="fas fa-comments"></i></span></a><a class="button is-warning is-rounded"><span class="icon has-text-light"><i class="fas fa-map-marker-alt"></i></span></a><a class="button is-danger is-rounded"><span class="icon has-text-light"><i class="fas fa-info-circle"></i></span></a></div></div></div></div></div>';
     totalContentString.push(contentString);
     for(var j = 0; j < totalContentString.length; j++) {
       var marker = new google.maps.Marker({

@@ -30,19 +30,11 @@
     getData();
   </script>
   <style>
-    html {
-      overflow-y: hidden;
-      overflow-x: hidden;
-    }
+  html, body { height:100%; width:100%;overflow: hidden;}
 
     #map {
-      height: 900px;
-    }
-
-    .scrollFix {
-      overflow: hidden;
-      white-space: nowrap;
-      word-wrap: break-word;
+      height: 100%;
+      width: 100%;
     }
 
     #wrapper {
@@ -51,7 +43,7 @@
 
     #over_map {
       position: absolute;
-      top: 410px;
+      top: 10px;
       left: 10px;
       z-index: 99;
     }
@@ -65,6 +57,7 @@
   </nav>
 </div>
 <div id="wrapper">
+  <div id="over_map"></div>
 
   <nav class="navbar is-fixed-bottom" role="navigation" aria-label="main navigation">
     <div class="tabs is-toggle is-fullwidth is-medium">
@@ -90,7 +83,7 @@
       </ul>
     </div>
   </nav>
-  <div id="over_map"></div>
+
 </div>
 
 <body onload="getData();">
