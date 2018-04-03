@@ -8,7 +8,7 @@ function googleSignin() {
       console.log("Success")
       console.log(result)
       if(token){
-        window.location = "https/swarn1120.github.io/www/map.html";
+        window.location = "/www/map.html";
       }
 
    }).catch(function(error) {
