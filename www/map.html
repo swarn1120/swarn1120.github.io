@@ -12,6 +12,8 @@
   <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-database.js"></script>
+  <script src="https://cdn.klokantech.com/maptilerlayer/v1/index.js"></script>
+
   <script>
     // Initialize Firebase
     var config = {
@@ -44,9 +46,15 @@
     #over_map {
       position: absolute;
       margin: auto;
-      top: 10px;
+      bottom: 50px;
       z-index: 99;
-
+    }
+    #over_map2 {
+      position: absolute;
+      bottom: 80px;
+      right: 17px;
+      margin: auto;
+      z-index: 99;
     }
     #rcorners2 {
     border-radius: 25px;
@@ -65,9 +73,8 @@
     </div>
   </nav>
 </div>
+
 <div id="wrapper" class="center-align">
-    <div id="over_map">
-    </div>
 
   <nav class="navbar is-fixed-bottom" role="navigation" aria-label="main navigation">
     <div class="tabs is-toggle is-fullwidth is-medium">
@@ -94,8 +101,15 @@
 
 
 <body onload="getData();">
+  <div id="over_map2">
+    <div class="center-align">
+      <a class="btn-floating btn-small waves-effect waves-light blue white-text" id="btn" onclick="locatePopulate()">
+      <i class="far fa-compass is-small center-align"></i>
+      </a>
+    </div>
+  </div>
+  <div id="over_map"></div>
   <div id='map'></div>
-
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwOo8vkPwF9-lteyjpdqDyn5RzKmjoKt4&callback=initMap">
   </script>
 </body>

@@ -13,6 +13,7 @@ function initMap() {
     disableDefaultUI: true
 
   });
+  gotData();
   var styles = {
     default: null,
     hide:[
@@ -80,6 +81,7 @@ function initMap() {
   ]
   };
   map.setOptions({styles: styles['hide']});
+  var geoloccontrol = new klokantech.GeolocationControl(map, mapMaxZoom);
 
   var contentString = '<h6 class="is-size-6-mobile">Current Location</h6>';
 
@@ -109,7 +111,6 @@ function initMap() {
     handleLocationError(false, infoWindow, map.getCenter());
   }
 }
-
 // Gets object data from Firebase
 function getData() {
   var ref = firebase.database().ref('Event');
@@ -171,6 +172,11 @@ function gotData(data) {
       attachSecretMessage(marker, totalContentString[i]);
     }
   }
+}
+function locatePopulate(){
+document.getElementById('btn').addEventListener('click', function(){
+  location.reload();
+});
 }
 window.onload = gotData;
 function errData(err) {
