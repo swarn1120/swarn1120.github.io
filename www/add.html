@@ -35,18 +35,13 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 </head>
-<nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a class="navbar-item" href="#">
-      <div class="columns is-mobile">
-        <div class="column">
-      <img src="../img/logo.png" width="130" height="85">
+<div class="navbar-fixed">
+  <nav class="white black-text">
+    <div class="nav-wrapper center-align">
+      <a href="#" class="brand-logo black-text center-align"><span class="teal-text  lighten-3-text">marco</span>/<span class="blue-text darken-3-text">polo</span></a>
     </div>
-  </div>
-    </a>
-  </div>
-</nav>
-<br><br>
+  </nav>
+</div>
 <div class="row">
   <form class="col s12">
     <div class="row">
@@ -54,12 +49,19 @@
         <input id="eventname" type="text">
         <label for="eventname" class="theme"> Event Name </label>
       </div>
+      <div class="input-field col s12">
+        <input id="host" type="text">
+        <label for="host" class="theme">Host | Orginization</label>
+      </div>
     </div>
     <div class="input-field col s12">
       <select id="category">
-        <option value="food">Food</option>
+        <option value="free">Free</option>
         <option value="entertainment">Entertainment</option>
+        <option value="parties">Parties</option>
         <option value="music">Music</option>
+        <option value="sports">Sports</option>
+        <option value="pregame">Pregame</option>
       </select>
       <label>Choose a Category</label>
     </div>
@@ -90,6 +92,10 @@
             <textarea id="description" class="materialize-textarea" data-length="50"></textarea>
             <label for="textarea1">Description</label>
           </div>
+          <div class="input-field col s12">
+            <input id="info" type="text">
+            <label for="info" class="theme">Additional Link</label>
+          </div>
         </div>
       </form>
     </div>
@@ -99,18 +105,17 @@
       <div id="us2" style="" class="center-align"></div>
     </div>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCf69RlrrN0ChatQlN28uGPRFyUP1MrV88&libraries=places"></script>
-    <script src='https://cdn.rawgit.com/Logicify/jquery-locationpicker-plugin/master/dist/locationpicker.jquery.min.js'></script>
+    <script src='../js/autocomplete.js'></script>
     <script src="../js/locationpicker.js"></script>
     <br>
     <div class="row center-align">
       <div class="col push-s3">
-        <a class="button is-rounded is-large teal accent-4 white-text is-pulled-right waves-effect waves-light" id="submit" onclick="getForm()" href="map.html" target="_blank"> &nbsp Add Event &nbsp</a>
+        <a class="button is-rounded is-large teal accent-4 white-text is-pulled-right waves-effect waves-light" id="submit" onclick="getForm()" href="#"> &nbsp Add Event &nbsp</a>
       </div><br><br><br>
     </div>
   </form>
 </div>
 <body>
-
 </body>
 
 </html>
