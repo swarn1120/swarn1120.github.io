@@ -1,6 +1,6 @@
 var map, infoWindow;
 
-var clearCard = ' ';
+var clearCard = '<div class="animated fadeOut"></div> ';
 
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
@@ -137,7 +137,7 @@ function gotData(data) {
            icon: iconBase + 'yellow.png'
          },
          Entertainment: {
-           icon: iconBase + 'red.png'
+           icon: iconBase + 'blue.png'
          },
          Music: {
            icon: iconBase + 'purple.png'
@@ -161,7 +161,7 @@ function gotData(data) {
     console.log(eventName);
     console.log(location);
     var mapLink = 'https://www.google.com/maps/place/'+location;
-    var contentString = '<div class="row"><div class="col s12"><div id="rcorners2"><div class="black-text"><h5 class="center-align teal-text  lighten-3-text">'+ eventName + '</h5><p>' + description + '</p><br><p class="center-align">' + startTime +' - ' +endTime+' | ' + date +  '</p></div> <br><div class="row center-align"><div class="col s4"><a class="button is-primary is-rounded is-large"><span class="icon  has-text-light is-large"><i class="fas fa-comments is-large"></i></span></a></div><div class="col s4"><a class="button is-dark is-rounded is-large" href="'+mapLink+'"><span class="icon has-text-light"><i class="fas fa-map-marker-alt"></i></span></a></div><div class="col s4"><a class="button is-link is-rounded is-large"><span class="icon has-text-light"><i class="fas fa-info-circle"></i></span></a></div></div></div></div></div></div></div>';
+    var contentString = '<div class="row"><div class="col s12"><div id="rcorners2" class="animated fadeIn"><div class="black-text"><h5 class="center-align teal-text  lighten-3-text">'+ eventName + '</h5><p>' + description + '</p><br><p class="center-align">' + startTime +' - ' +endTime+' | ' + date +  '</p></div> <br><div class="row center-align"><div class="col s4"><a class="button is-primary is-rounded is-large"><span class="icon  has-text-light is-large"><i class="fas fa-comments is-large"></i></span></a></div><div class="col s4"><a class="button is-dark is-rounded is-large" href="'+mapLink+'"><span class="icon has-text-light"><i class="fas fa-map-marker-alt"></i></span></a></div><div class="col s4"><a class="button is-link is-rounded is-large"><span class="icon has-text-light"><i class="fas fa-info-circle"></i></span></a></div></div></div></div></div></div></div>';
     totalContentString.push(contentString);
     for(var j = 0; j < totalContentString.length; j++) {
       var marker = new google.maps.Marker({
