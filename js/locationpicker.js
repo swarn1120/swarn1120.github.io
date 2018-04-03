@@ -18,7 +18,7 @@ function getForm() {
   var strEventName = document.getElementById("eventname");
   var e = document.getElementById("category");
   var strUser = e.options[e.selectedIndex].text;
-  var host = document.getElementById("host");
+  var org = document.getElementById("host");
   var link = document.getElementById("info");
   var date = document.getElementById("date");
   var strStartTime = document.getElementById("starttime");
@@ -37,8 +37,8 @@ function getForm() {
       var data = {
         eventName: strEventName.value,
         category: strUser,
-        host: host,
-        info: link,
+        host: org.value,
+        info: link.value,
         date: date.value,
         description: strDescription.value,
         startTime: strStartTime.value,

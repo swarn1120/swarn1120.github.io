@@ -5,6 +5,7 @@ function googleSignin() {
    firebase.auth().signInWithPopup(provider).then(function(result) {
       var token = result.credential.accessToken;
       var user = result.user;
+      localStorage.setItem("player" , user);
       console.log("Success")
       console.log(result)
       if(token){
@@ -18,4 +19,8 @@ function googleSignin() {
       console.log(error.code)
       console.log(error.message)
    });
+}
+function returnUser(){
+  var playerReady = localStorage.getItem('player');
+  document.getElementById('player').innerHTML = 'Welcome' + playerReady;
 }
