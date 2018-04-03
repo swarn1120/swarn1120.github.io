@@ -2,12 +2,9 @@ var provider = new firebase.auth.GoogleAuthProvider();
 var google = new firebase.auth(google)
 
 function googleSignin() {
-   firebase.auth()
-
-   .signInWithPopup(provider).then(function(result) {
+   firebase.auth().signInWithPopup(provider).then(function(result) {
       var token = result.credential.accessToken;
       var user = result.user;
-
       console.log(token)
       console.log(user)
    }).catch(function(error) {
