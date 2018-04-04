@@ -1,90 +1,59 @@
 var map, infoWindow;
 
 var clearCard = '<div class="animated fadeOut"></div> ';
-
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     center: {
       lat: 32.985762,
       lng: -96.750099
     },
+    disableDefaultUI: true,
     zoom: 18,
-
-    disableDefaultUI: true
-
+    styles: [
+  {
+    "featureType": "poi.business",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.park",
+    "elementType": "labels.text",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "road.arterial",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "road.highway",
+    "elementType": "labels",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "road.local",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  }
+]
   });
-  gotData();
-  var styles = {
-    default: null,
-    hide:[
-    {
-      "featureType": "administrative",
-      "elementType": "geometry",
-      "stylers": [
-        {
-          "visibility": "off"
-        }
-      ]
-    },
-    {
-      "featureType": "administrative.land_parcel",
-      "elementType": "labels",
-      "stylers": [
-        {
-          "visibility": "off"
-        }
-      ]
-    },
-    {
-      "featureType": "poi",
-      "stylers": [
-        {
-          "visibility": "off"
-        }
-      ]
-    },
-    {
-      "featureType": "poi",
-      "elementType": "labels.text",
-      "stylers": [
-        {
-          "visibility": "on"
-        }
-      ]
-    },
-    {
-      "featureType": "road",
-      "elementType": "labels.icon",
-      "stylers": [
-        {
-          "visibility": "on"
-        }
-      ]
-    },
-    {
-      "featureType": "road.local",
-      "elementType": "labels",
-      "stylers": [
-        {
-          "visibility": "on"
-        }
-      ]
-    },
-    {
-      "featureType": "transit",
-      "stylers": [
-        {
-          "visibility": "off"
-        }
-      ]
-    }
-  ]
-  };
-  map.setOptions({styles: styles['hide']});
-  var geoloccontrol = new klokantech.GeolocationControl(map, mapMaxZoom);
-
-  var contentString = '<h6 class="is-size-6-mobile">Current Location</h6>';
-
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
       var pos = {
@@ -92,17 +61,12 @@ function initMap() {
         lng: position.coords.longitude
       };
       map.setCenter(pos);
-      var infowindow = new google.maps.InfoWindow({
-        content: contentString
-      });
       var marker = new google.maps.Marker({
         position: pos,
         map: map,
         icon: '../img/blue.png'
       });
-      marker.addListener('click', function() {
-        infowindow.open(map, marker);
-      });
+
     }, function() {
       handleLocationError(true, infoWindow, map.getCenter());
     });
