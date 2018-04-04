@@ -121,7 +121,7 @@ function getData() {
 function attachSecretMessage(marker, totalContentString) {
   marker.addListener('click', function() {
     document.getElementById("over_map").innerHTML = totalContentString;
-    map.setZoom(18);
+    map.setZoom(17);
 map.setCenter(marker.getPosition());
   });
   google.maps.event.addListener(map, "click", function(event) {

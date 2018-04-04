@@ -23,5 +23,5 @@ function googleSignin() {
 function returnUser(){
   var playerReady = localStorage.getItem('player');
   console.log(playerReady.value);
-  document.getElementById('player').innerHTML = 'Welcome' + playerReady;
+  document.getElementById('player').innerHTML = playerReady;
 }

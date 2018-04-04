@@ -11,7 +11,7 @@ $('#us2').locationpicker({
     lat = currentLocation.latitude;
   }
 });
-
+  ``
 
 /** Add an event to Firebase database */
 function getForm() {
