@@ -1,63 +1,29 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>marco/polo | signup</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
   <link rel="stylesheet" href="css/style.css">
-  <script src="https://www.gstatic.com/firebasejs/4.10.0/firebase.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-database.js"></script>
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyCvM4gKXyUW58BrDOnqU3bJBGnCNiexCzI",
-      authDomain: "marco-polo-c90db.firebaseapp.com",
-      databaseURL: "https://marco-polo-c90db.firebaseio.com",
-      projectId: "marco-polo-c90db",
-      storageBucket: "marco-polo-c90db.appspot.com",
-      messagingSenderId: "399167559169"
-    };
-    firebase.initializeApp(config);
-  </script>
+  <link rel="stylesheet" href="css/animate.css">
   <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-  <script src="js/auth.js"></script>
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <style>
+    .centered {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      /* bring your own prefixes */
+      transform: translate(-50%, -50%);
+    }
+  </style>
 </head>
 
 <body>
-  <section class="">
-    <br><br><br>
-    <div class="columns is-mobile is-centered">
-      <div class="column is-half is-narrow">
-        <img src="img/logo.png" alt="" width="250" height="80">
-      </div>
+  <div class="centered">
+    <div class="animated zoomInUp">
+      <img src="img/images.png" />
     </div>
-    <div class="columns is-mobile is-centered">
-      <div class="column is-half is-narrow">
-        <h1 class="has-text-weight-bold	title is-4 has-text-centered	">&nbspJoin the pool</h1>
-        <h1 class="has-text-bold is-size-6-mobile has-text-centered	">Sign in using your Google or Facebook Account</h1>
-        <br>
-      </div>
-    </div>
-    <div class="columns is-mobile is-centered">
-      <div class="column is-thirds"></div>
-      <div class="column is-thirds">
-        <a class="button is-danger is-rounded is-medium" onclick = "googleSignin()">Sign in with Google</a><br>
-      </div>
-      <div class="column is-thirds"></div>
-    </div>
-    <div class="columns is-mobile is-centered">
-      <div class="column is-thirds"></div>
-      <div class="column is-thirds">
-        <a class="button is-link is-rounded is-medium" href="www/map.html" onclick = "Signin()" href="www/map.html">Continue to Map</a>
-      </div>
-      <div class="column is-thirds"></div>
-    </div>
-    </div>
-  </section>
+  </div>
 </body>
-
 </html>

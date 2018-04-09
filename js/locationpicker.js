@@ -11,11 +11,12 @@ $('#us2').locationpicker({
     lat = currentLocation.latitude;
   }
 });
-  ``
+
 
 /** Add an event to Firebase database */
 function getForm() {
   var strEventName = document.getElementById("eventname");
+  localStorage.setItem("chatRoomName", strEventName.value);
   var e = document.getElementById("category");
   var strUser = e.options[e.selectedIndex].text;
   var org = document.getElementById("host");
@@ -25,7 +26,8 @@ function getForm() {
   var endtime = document.getElementById("endtime");
   var strDescription = document.getElementById("description");
   var location = document.getElementById("us2-address");
-
+  var chatRoomName = strEventName.value;
+  var fillertest = org.value;
   var data = JSON.stringify({
     "title": strEventName.value
   })
@@ -33,6 +35,7 @@ function getForm() {
 
       // Write event data to Firebase
       var ref = firebase.database().ref('Event');
+      var chatbase = firebase.database().ref('Chat');
 
       var data = {
         eventName: strEventName.value,
@@ -49,5 +52,7 @@ function getForm() {
       }
 
       ref.push(data);
+      chatbase.push(chatRoomName);
+      chatbase.push(fillertest);
 
 }

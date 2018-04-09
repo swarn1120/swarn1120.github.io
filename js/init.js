@@ -1,5 +1,6 @@
 (function($) {
   $(function() {
+    $('.carousel').carousel();
     $('select').material_select();
     $('.slider').slider();
     $(".button-collapse").sideNav();
@@ -12,6 +13,7 @@
       closeOnSelect: false // Close upon selecting a date,
     });
     $('input#input_text, textarea#textarea1').characterCounter();
+    $('.carousel').carousel();
     $('.timepicker').pickatime({
       default: 'now', // Set default time: 'now', '1:30AM', '16:30'
       fromnow: 0, // set default time to * milliseconds from now (using with default = 'now')
