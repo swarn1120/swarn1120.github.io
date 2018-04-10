@@ -9,102 +9,79 @@ function initMap() {
     },
     disableDefaultUI: true,
     zoom: 18,
-    styles: [
-  {
-    "featureType": "administrative",
-    "elementType": "geometry",
-    "stylers": [
+    styles: [{
+        "featureType": "administrative",
+        "elementType": "geometry",
+        "stylers": [{
+          "visibility": "off"
+        }]
+      },
       {
-        "visibility": "off"
+        "featureType": "administrative.land_parcel",
+        "stylers": [{
+          "visibility": "off"
+        }]
+      },
+      {
+        "featureType": "administrative.neighborhood",
+        "stylers": [{
+          "visibility": "off"
+        }]
+      },
+      {
+        "featureType": "poi",
+        "stylers": [{
+          "visibility": "off"
+        }]
+      },
+      {
+        "featureType": "road",
+        "elementType": "labels",
+        "stylers": [{
+          "visibility": "off"
+        }]
+      },
+      {
+        "featureType": "road",
+        "elementType": "labels.icon",
+        "stylers": [{
+          "visibility": "off"
+        }]
+      },
+      {
+        "featureType": "road.arterial",
+        "elementType": "labels",
+        "stylers": [{
+          "visibility": "off"
+        }]
+      },
+      {
+        "featureType": "road.highway",
+        "elementType": "labels",
+        "stylers": [{
+          "visibility": "off"
+        }]
+      },
+      {
+        "featureType": "road.local",
+        "stylers": [{
+          "visibility": "off"
+        }]
+      },
+      {
+        "featureType": "transit",
+        "stylers": [{
+          "visibility": "off"
+        }]
+      },
+      {
+        "featureType": "water",
+        "elementType": "labels.text",
+        "stylers": [{
+          "visibility": "off"
+        }]
       }
     ]
-  },
-  {
-    "featureType": "administrative.land_parcel",
-    "stylers": [
-      {
-        "visibility": "off"
-      }
-    ]
-  },
-  {
-    "featureType": "administrative.neighborhood",
-    "stylers": [
-      {
-        "visibility": "off"
-      }
-    ]
-  },
-  {
-    "featureType": "poi",
-    "stylers": [
-      {
-        "visibility": "off"
-      }
-    ]
-  },
-  {
-    "featureType": "road",
-    "elementType": "labels",
-    "stylers": [
-      {
-        "visibility": "off"
-      }
-    ]
-  },
-  {
-    "featureType": "road",
-    "elementType": "labels.icon",
-    "stylers": [
-      {
-        "visibility": "off"
-      }
-    ]
-  },
-  {
-    "featureType": "road.arterial",
-    "elementType": "labels",
-    "stylers": [
-      {
-        "visibility": "off"
-      }
-    ]
-  },
-  {
-    "featureType": "road.highway",
-    "elementType": "labels",
-    "stylers": [
-      {
-        "visibility": "off"
-      }
-    ]
-  },
-  {
-    "featureType": "road.local",
-    "stylers": [
-      {
-        "visibility": "off"
-      }
-    ]
-  },
-  {
-    "featureType": "transit",
-    "stylers": [
-      {
-        "visibility": "off"
-      }
-    ]
-  },
-  {
-    "featureType": "water",
-    "elementType": "labels.text",
-    "stylers": [
-      {
-        "visibility": "off"
-      }
-    ]
-  }
-]
   });
 
   if (navigator.geolocation) {
@@ -185,6 +162,7 @@ function gotData(data) {
     var endTime = values[k].endTime;
     var longitude = values[k].longCoord;
     var latitude = values[k].latCoord;
+    var image = values[k].image;
     var pos = {
       lat: latitude,
       lng: longitude
@@ -192,8 +170,9 @@ function gotData(data) {
     console.log(eventName);
     console.log(location);
     var mapLink = 'https://www.google.com/maps/place/' + location;
-    var imgsrc = 'https://source.unsplash.com/1600x900/?'+eventName + ','+ category;
-    var contentString = '<div class="animated fadeInUp"><div class="card" id="rcorners2"><div class="card-image waves-effect waves-block waves-light"><img class="activator" id="img" src="'+imgsrc+'"></div><div class="card-content"><span class="card-title activator grey-text text-darken-4">'+ eventName +'<i class="material-icons right">more_vert</i></span><p>'+ startTime + ' - ' + endTime + ' | ' + date + '</p></div><div class="card-reveal"><span class="card-title grey-text text-darken-4">'+ eventName +'<i class="material-icons right">close</i></span><p>Hosted by '+ host +'</p><br><p>'+description+'</p><br><hr color="black" /><div class="row center-align"><nav class="navbar is-fixed-bottom" role="navigation" aria-label="main navigation"><div class="row center-align"><div class="col s4"><a class="button is-primary is-rounded is-large"><span class="icon  has-text-light is-large"><i class="fas fa-comments is-large"></i></span></a></div><div class="col s4"><a class="button is-dark is-rounded is-large" href="' + mapLink + '"><span class="icon has-text-light"><i class="fas fa-map-marker-alt"></i></span></a></div><div class="col s4"><a class="button is-link is-rounded is-large" href="' + info + '"><span class="icon has-text-light"><i class="fas fa-info-circle"></i></span></a></div></div></nav></div></div></div></div></div>';
+    //var uber = 'https://m.uber.com/ul/?client_id=<CLIENT_ID>&action=dropoff[latitude]='+latitude+'&dropoff[longitude]='+longtitude;
+
+    var contentString = '<div class="animated fadeInUp"><div class="card" id="rcorners2"><div class="card-image waves-effect waves-block waves-light"><img class="activator" id="img" src="' + image + '"></div><div class="card-content"><span class="card-title activator grey-text text-darken-4">' + eventName + '<i class="material-icons right">more_vert</i></span><p>' + startTime + ' - ' + endTime + ' | ' + date + '</p></div><div class="card-reveal"><span class="card-title grey-text text-darken-4">' + eventName + '<i class="material-icons right">close</i></span><p>Hosted by ' + host + '</p><br><p>' + description + '</p><br><nav class="navbar is-fixed-bottom" role="navigation" aria-label="main navigation"><div class="row center-align"><div class="col s4"><a class="button green darken-2 is-rounded is-large" href="' + mapLink + '"><span class="icon  has-text-light is-large"><i class="fas fa-map-marker-alt is-large"></i></span></a></div><div class="col s4"><a class="button is-dark is-rounded is-large" href=""><span class="icon has-text-light"><i class="fab fa-uber"></i></span></a></div><div class="col s4"><a class="button blue lighten-1 is-rounded is-large" href="' + info + '"><span class="icon has-text-light"><i class="fab fa-vuejs"></i></span></a></div></div></nav></div></div></div></div>';
     totalContentString.push(contentString);
     for (var j = 0; j < totalContentString.length; j++) {
       var marker = new google.maps.Marker({

@@ -28,6 +28,7 @@ function getForm() {
   var location = document.getElementById("us2-address");
   var chatRoomName = strEventName.value;
   var fillertest = org.value;
+  var imgsrc = 'https://source.unsplash.com/500x400/?'+ strEventName.value;
   var data = JSON.stringify({
     "title": strEventName.value
   })
@@ -35,7 +36,6 @@ function getForm() {
 
       // Write event data to Firebase
       var ref = firebase.database().ref('Event');
-      var chatbase = firebase.database().ref('Chat');
 
       var data = {
         eventName: strEventName.value,
@@ -48,11 +48,9 @@ function getForm() {
         endTime: endtime.value,
         location: location.value,
         longCoord: lon,
-        latCoord: lat
+        latCoord: lat,
+        image: imgsrc
       }
 
       ref.push(data);
-      chatbase.push(chatRoomName);
-      chatbase.push(fillertest);
-
 }
