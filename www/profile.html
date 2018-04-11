@@ -8,73 +8,41 @@
   <link rel="stylesheet" href="../css/bulma.css">
   <link rel="stylesheet" href="../css/materialize.min.css">
   <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/4.10.0/firebase.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-database.js"></script>
-  <script>
-    // Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyCvM4gKXyUW58BrDOnqU3bJBGnCNiexCzI",
-      authDomain: "marco-polo-c90db.firebaseapp.com",
-      databaseURL: "https://marco-polo-c90db.firebaseio.com",
-      projectId: "marco-polo-c90db",
-      storageBucket: "marco-polo-c90db.appspot.com",
-      messagingSenderId: "399167559169"
-    };
-    firebase.initializeApp(config);
-  </script>
   <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
-  <script src="../js/auth.js"></script>
-  <script>returnUser();</script>
-  <style>
-  #rcorners2 {
-  border-radius: 25px;
-  padding: 10px;
-  background-color: white;
-  width: 100%;
-  height: 100%;
-  box-shadow: 0px 4px 10px #888888;
-}
-</style>
 </head>
-<div class="navbar-fixed">
-<nav class="white black-text">
-  <div class="nav-wrapper">
-    <a href="#" class="brand-logo black-text"><span class="teal-text  lighten-3-text">marco</span>/<span class="blue-text darken-3-text">polo</span></a>
-  </div>
-</nav>
-</div>
 <nav class="navbar is-fixed-bottom" role="navigation" aria-label="main navigation">
   <div class="tabs is-toggle is-fullwidth is-medium">
     <ul>
       <li class="is-primary is-large">
-        <a href="map.html">
-        <span class="icon is-large has-text-dark"><i class="fas fa-map is-large"></i></span>
+        <a href="../index.html">
+        <span class="icon is-large has-text-dark"><i class="fas fa-volleyball-ball is-large"></i></span>
       </a>
       </li>
+      <li class="is-primary is-large">
+        <a href="map.html">
+        <span class="icon is-large has-text-dark"><i class="fas fa-list-ul is-large"></i></span>
+      </a>
+      </li>
+
       <li>
-        <a href="notif.html">
-        <span class="icon is-large has-text-dark"><i class="fas fa-bell is-large"></i></span>
+        <a href="party.html">
+        <span class="icon is-large has-text-dark"><i class="fas fa-glass-martini is-large"></i></span>
       </a>
       </li>
       <li>
         <a href="profile.html">
-        <span class="icon is-large has-text-dark"><i class="fas fa-cog is-large"></i></span>
+        <span class="icon is-large has-text-dark"><i class="fas fa-paper-plane is-large"></i></span>
       </a>
       </li>
     </ul>
   </div>
 </nav>
-<body onload="returnUser();">
-  <section class="container"><br><br>
-    <div class="center-align">
-      <div id="rcorners2" class="center-align">
-        <h6 class="teal-text" id="player"></h6>
-
-      </div>
+<body>
+  <section class="container">
       <br><br>
-    <a class="waves-effect waves-light btn teal" href="add.html">Add Event</a>
+      <div class="center-align">
+    <a class="waves-effect waves-light btn teal " href="add.html">Add Event</a>
+  </div>
   </div>
   </section>
 </body>
