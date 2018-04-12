@@ -155,6 +155,7 @@ function gotData(data) {
     var category = values[k].category;
     var host = values[k].host;
     var info = values[k].info;
+    var featuredSelect = values[k].featured;
     var description = values[k].description;
     var date = values[k].date;
     var location = values[k].location;
@@ -167,22 +168,19 @@ function gotData(data) {
       lat: latitude,
       lng: longitude
     };
-    console.log(eventName);
-    console.log(location);
     var mapLink = 'https://www.google.com/maps/place/' + location;
-    //var uber = 'https://m.uber.com/ul/?client_id=<CLIENT_ID>&action=dropoff[latitude]='+latitude+'&dropoff[longitude]='+longtitude;
+    var contentString = '<div class="card" id="rcorners2"><div class="card-image waves-effect waves-block waves-light"><img class="activator" src="' + image + '" id="img"><div class="top-left"><h6>' + category + '</h6></div><div class="top-left2"><h5>' + eventName + '</h5></div><div class="bottom-right"><a class="button is-primary is-outlined">Interested</a></div></div><div class="card-reveal"><span class="card-title grey-text text-darken-4">' + eventName + '<i class="material-icons right">close</i></span><p>' + description + '</p></div></div>';
 
-    var contentString = '<div class="animated fadeInUp center-align "><div class="card" id="rcorners2"><div class="card-image waves-effect waves-block waves-light"><img class="activator" id="img" src="' + image+ '"></div><div class="card-content"><span class="card-title activator grey-text text-darken-4">' + eventName + '<i class="material-icons right">more_vert</i></span><p>' + startTime + ' - ' + endTime + ' | ' + date + '</p></div><div class="card-reveal"><span class="card-title grey-text text-darken-4">' + eventName + '<i class="material-icons right">close</i></span><p>Hosted by ' + host + '</p><br><p>' + description + '</p><br><nav class="navbar is-fixed-bottom" role="navigation" aria-label="main navigation"><div class="row center-align"><div class="col s4"><a class="button green darken-2 is-rounded is-large" href="' + mapLink + '"><span class="icon  has-text-light is-large"><i class="fas fa-map-marker-alt is-large"></i></span></a></div><div class="col s4"><a class="button is-dark is-rounded is-large" href=""><span class="icon has-text-light"><i class="fab fa-uber"></i></span></a></div><div class="col s4"><a class="button blue lighten-1 is-rounded is-large" href="' + info + '"><span class="icon has-text-light"><i class="fab fa-vuejs"></i></span></a></div></div></nav></div></div></div></div>';
     totalContentString.push(contentString);
     for (var j = 0; j < totalContentString.length; j++) {
       var marker = new google.maps.Marker({
         position: pos,
         map: map,
         icon: icons[category].icon,
-
       });
       attachSecretMessage(marker, totalContentString[i]);
     }
+    featuredPopulate(featuredSelect, image, eventName,description,category);
   }
 }
 
@@ -191,7 +189,13 @@ function locatePopulate() {
     location.reload();
   });
 }
-window.onload = gotData;
+function featuredPopulate(featuredSelect, image, eventName,description,category) {
+  if (featuredSelect == "Yes") {
+    var featuredCard = '<div class="card" id="rcorners2"><div class="card-image waves-effect waves-block waves-light"><img class="activator" src="' + image + '" id="img"><div class="top-left"><h6>' + category + '</h6></div><div class="top-left2"><h5>' + eventName + '</h5></div><div class="bottom-right"><a class="button is-primary is-outlined">Interested</a></div></div><div class="card-reveal"><span class="card-title grey-text text-darken-4">' + eventName + '<i class="material-icons right">close</i></span><p>' + description + '</p></div></div>';
+    document.getElementById("featuredCard").innerHTML = featuredCard;
+    console.log(featuredCard.value);
+  }
+}
 
 function errData(err) {
   console.log('Error occured!');

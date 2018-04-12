@@ -19,6 +19,8 @@ function getForm() {
   localStorage.setItem("chatRoomName", strEventName.value);
   var e = document.getElementById("category");
   var strUser = e.options[e.selectedIndex].text;
+  var f = document.getElementById("featured");
+  var strFeature = f.options[f.selectedIndex].text;
   var org = document.getElementById("host");
   var link = document.getElementById("info");
   var date = document.getElementById("date");
@@ -26,9 +28,7 @@ function getForm() {
   var endtime = document.getElementById("endtime");
   var strDescription = document.getElementById("description");
   var location = document.getElementById("us2-address");
-  var chatRoomName = strEventName.value;
-  var fillertest = org.value;
-  var imgsrc = 'https://source.unsplash.com/500x400/?'+ strEventName.value;
+  var imgsrc = document.getElementById("imageLink");
   var data = JSON.stringify({
     "title": strEventName.value
   })
@@ -43,6 +43,7 @@ function getForm() {
         host: org.value,
         info: link.value,
         date: date.value,
+        featured: strFeature,
         description: strDescription.value,
         startTime: strStartTime.value,
         endTime: endtime.value,
