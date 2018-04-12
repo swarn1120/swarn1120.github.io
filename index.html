@@ -4,14 +4,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>marco/polo | home</title>
+  <title>marco/polo | featured</title>
   <link rel="stylesheet" href="css/bulma.css">
   <link rel="stylesheet" href="css/animate.css">
   <link rel="stylesheet" href="css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
   <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
-  <script src="js/app.js"></script>
+  <script src="js/feature.js"></script>
   <script src="js/materialize.min.js"></script>
   <script src="js/init.js"></script>
   <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
@@ -33,13 +33,17 @@
     };
     firebase.initializeApp(config);
   </script>
+  <script>
+    getData();
+  </script>
   <style>
     .html {
       font-family: Montserrat;
       font-style: normal;
       font-weight: 500;
       color: #828282;
-      scrollbar: hideen;
+      overflow: hidden;
+      scrollbar: hidden;
     }
 
     #logo {
@@ -55,6 +59,7 @@
       border-radius: 15px 15px 15px 15px;
       width: 100%;
       box-shadow: 0px 4px 10px #888888;
+      height: 250px;
     }
 
     .top-left {
@@ -86,18 +91,18 @@
     }
   </script>
 
-  <body onload="featuredPopulate();">
+  <body onload="gotData();">
     <nav class="navbar is-fixed-bottom" role="navigation" aria-label="main navigation">
       <div class="tabs is-toggle is-fullwidth is-medium">
         <ul>
           <li class="is-primary is-large">
             <a href="index.html">
-          <span class="icon is-large has-text-dark"><i class="fas fa-volleyball-ball is-large"></i></span>
+          <span class="icon is-large has-text-dark"><i class="fas fa-trophy is-large"></i></span>
         </a>
           </li>
           <li class="is-primary is-large">
             <a href="www/map.html">
-          <span class="icon is-large has-text-dark"><i class="fas fa-list-ul is-large"></i></span>
+          <span class="icon is-large has-text-dark"><i class="fas fa-map is-large"></i></span>
         </a>
           </li>
 
@@ -114,6 +119,7 @@
         </ul>
       </div>
     </nav>
+    <br>
     <div class="container">
       <div class="row">
         <div class="col s6">
@@ -127,88 +133,7 @@
     </div>
     <br>
     <div class="container">
-      <!--<div id="featuredCard"></div>-->
-      <div class="card" id="rcorners2">
-        <div class="card-image waves-effect waves-block waves-light">
-          <img class="activator" src="http://48tx1q1rrcysi4t7l687xbtt.wpengine.netdna-cdn.com/wp-content/uploads/2014/05/IMG_3223.jpg" id="img">
-          <div class="top-left">
-            <h6>FREE</h6>
-          </div>
-          <div class="top-left2">
-            <h5>Free Bowling at Main Event</h5>
-          </div>
-          <div class="bottom-right"><a class="button is-primary is-outlined">Interested</a></div>
-        </div>
-        <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-          <p>Here is some more information about this product that is only revealed once clicked on.</p>
-        </div>
-      </div>
-      <div class="card" id="rcorners2">
-        <div class="card-image waves-effect waves-block waves-light">
-          <img class="activator" src="img/music.jpg" id="img">
-          <div class="top-left">
-            <h6>MUSIC</h6>
-          </div>
-          <div class="top-left2">
-            <h5>Toyota Music Festival</h5>
-          </div>
-          <div class="bottom-right"><a class="button is-primary is-outlined">Interested</a></div>
-        </div>
-        <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-          <p>Here is some more information about this product that is only revealed once clicked on.</p>
-        </div>
-      </div>
-      <div class="card" id="rcorners2">
-        <div class="card-image waves-effect waves-block waves-light">
-          <img class="activator" src="img/theater.jpg" id="img">
-          <div class="top-left">
-            <h6>ENTERTAINMENT</h6>
-          </div>
-          <div class="top-left2">
-            <h5>Coco at Meteor Theater</h5>
-          </div>
-          <div class="bottom-right"><a class="button is-primary is-outlined">Interested</a></div>
-        </div>
-        <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-          <p>Here is some more information about this product that is only revealed once clicked on.</p>
-        </div>
-      </div>
-      <div class="card" id="rcorners2">
-        <div class="card-image waves-effect waves-block waves-light">
-          <img class="activator" src="img/sports.jpg" id="img">
-          <div class="top-left">
-            <h6>SPORTS</h6>
-          </div>
-          <div class="top-left2">
-            <h5>Red Bull Neymar Challenge</h5>
-          </div>
-          <div class="bottom-right"><a class="button is-primary is-outlined">Interested</a></div>
-        </div>
-        <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-          <p>Here is some more information about this product that is only revealed once clicked on.</p>
-        </div>
-      </div>
-      <div class="card" id="rcorners2">
-        <div class="card-image waves-effect waves-block waves-light">
-          <img class="activator" src="https://www.omnihotels.com/-/media/images/hotels/daldtn/destinations/localattractions/reunion-tower.jpg?h=660&la=en&w=1170" id="img">
-          <div class="top-left">
-            <h6>VISIT</h6>
-          </div>
-          <div class="top-left2">
-            <h5>Reunion Tower</h5>
-          </div>
-          <div class="bottom-right"><a class="button is-primary is-outlined">Interested</a></div>
-        </div>
-        <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-          <p>Here is some more information about this product that is only revealed once clicked on.</p>
-        </div>
-      </div>
-    </div>
+      <div id="cards"></div>
     <br><br><br>
   </body>
 

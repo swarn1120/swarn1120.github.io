@@ -169,7 +169,7 @@ function gotData(data) {
       lng: longitude
     };
     var mapLink = 'https://www.google.com/maps/place/' + location;
-    var contentString = '<div class="card" id="rcorners2"><div class="card-image waves-effect waves-block waves-light"><img class="activator" src="' + image + '" id="img"><div class="top-left"><h6>' + category + '</h6></div><div class="top-left2"><h5>' + eventName + '</h5></div><div class="bottom-right"><a class="button is-primary is-outlined">Interested</a></div></div><div class="card-reveal"><span class="card-title grey-text text-darken-4">' + eventName + '<i class="material-icons right">close</i></span><p>' + description + '</p></div></div>';
+    var contentString = '<div class="animated fadeInUp"><div class="card" id="rcorners2"><div class="card-image waves-effect waves-block waves-light"><img class="activator" src="' + image + '" id="img"><div class="top-left"><h6>' + category + '</h6></div><div class="top-left2"><h5>' + eventName + '</h5></div><div class="bottom-left">'+date +'</div><div class="bottom-right"><a class="button is-primary is-outlined">Interested</a></div></div><div class="card-reveal"><div class="row"><div class="col s10"><h5><span class="card-title grey-text text-darken-4"><b>' + eventName + '</b></div><div class="col s2"><i class="material-icons right">close</i></span></h5></div></div>' + description + '</p><br><div class="row center-align"><div class="col s6"><a class="button is-medium blue-text grey lighten-3" id="rcorners3" href="'+info+'">More Info</a></div><div class="col s6"><a class="button is-medium white-text blue" id="rcorners3"href="'+mapLink+'">Directions</a></div></div></div></div></div>';
 
     totalContentString.push(contentString);
     for (var j = 0; j < totalContentString.length; j++) {
@@ -180,7 +180,7 @@ function gotData(data) {
       });
       attachSecretMessage(marker, totalContentString[i]);
     }
-    featuredPopulate(featuredSelect, image, eventName,description,category);
+    //featuredPopulate(featuredSelect, image, eventName,description,category);
   }
 }
 

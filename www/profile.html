@@ -6,45 +6,146 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>marco/polo | profile</title>
   <link rel="stylesheet" href="../css/bulma.css">
+  <link rel="stylesheet" href="../css/animate.css">
   <link rel="stylesheet" href="../css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
   <script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
-</head>
-<nav class="navbar is-fixed-bottom" role="navigation" aria-label="main navigation">
-  <div class="tabs is-toggle is-fullwidth is-medium">
-    <ul>
-      <li class="is-primary is-large">
-        <a href="../index.html">
-        <span class="icon is-large has-text-dark"><i class="fas fa-volleyball-ball is-large"></i></span>
-      </a>
-      </li>
-      <li class="is-primary is-large">
-        <a href="map.html">
-        <span class="icon is-large has-text-dark"><i class="fas fa-list-ul is-large"></i></span>
-      </a>
-      </li>
+  <script src="../js/party.js"></script>
+  <script src="../js/materialize.min.js"></script>
+  <script src="../js/init.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.10.0/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase-database.js"></script>
+  <script src="https://cdn.klokantech.com/maptilerlayer/v1/index.js"></script>
 
-      <li>
-        <a href="party.html">
-        <span class="icon is-large has-text-dark"><i class="fas fa-glass-martini is-large"></i></span>
-      </a>
-      </li>
-      <li>
-        <a href="profile.html">
-        <span class="icon is-large has-text-dark"><i class="fas fa-paper-plane is-large"></i></span>
-      </a>
-      </li>
-    </ul>
-  </div>
-</nav>
-<body>
-  <section class="container">
-      <br><br>
-      <div class="center-align">
-    <a class="waves-effect waves-light btn teal " href="add.html">Add Event</a>
-  </div>
-  </div>
-  </section>
-</body>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyCvM4gKXyUW58BrDOnqU3bJBGnCNiexCzI",
+      authDomain: "marco-polo-c90db.firebaseapp.com",
+      databaseURL: "https://marco-polo-c90db.firebaseio.com",
+      projectId: "marco-polo-c90db",
+      storageBucket: "marco-polo-c90db.appspot.com",
+      messagingSenderId: "399167559169"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script>
+    getData();
+  </script>
+  <style>
+    .html {
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: 500;
+      color: #828282;
+      overflow: hidden;
+      scrollbar: hidden;
+    }
+
+    #logo {
+      padding-top: 8px;
+    }
+
+    #rcorners2 {
+      border-radius: 15px;
+      box-shadow: 0px 4px 10px #888888;
+    }
+    #rcorners3 {
+      border-radius: 15px;
+    }
+    #img {
+      border-radius: 15px 15px 15px 15px;
+      width: 100%;
+      box-shadow: 0px 4px 10px #888888;
+      height: 250px;
+      -webkit-filter: blur(1px); /* Safari */
+      filter: blur(1px);
+    }
+    .row{
+      margin: none;
+    }
+    .top-left {
+      position: absolute;
+      top: 8px;
+      left: 16px;
+      color: white;
+    }
+
+    .top-left2 {
+      position: absolute;
+      top: 25px;
+      left: 16px;
+      color: white;
+    }
+    .bottom-left {
+      position: absolute;
+      bottom: 10px;
+      left: 16px;
+      color: white;
+    }
+    .bottom-right {
+      position: absolute;
+      bottom: 10px;
+      right: 16px;
+      color: white;
+    }
+  </style>
+  <script>
+    function myFunction() {
+      var d = new Date();
+      var n = d.toDateString();
+      document.getElementById("demo").innerHTML = n;
+    }
+  </script>
+
+  <body onload="gotData();">
+    <nav class="navbar is-fixed-bottom" role="navigation" aria-label="main navigation">
+      <div class="tabs is-toggle is-fullwidth is-medium">
+        <ul>
+          <li class="is-primary is-large">
+            <a href="../index.html">
+          <span class="icon is-large has-text-dark"><i class="fas fa-trophy is-large"></i></span>
+        </a>
+          </li>
+          <li class="is-primary is-large">
+            <a href="map.html">
+          <span class="icon is-large has-text-dark"><i class="fas fa-map is-large"></i></span>
+        </a>
+          </li>
+
+          <li>
+            <a href="party.html">
+<span class="icon is-large has-text-dark"><i class="fas fa-glass-martini is-large"></i></span>
+</a>
+          </li>
+          <li>
+            <a href="profile.html">
+          <span class="icon is-large has-text-dark"><i class="fas fa-paper-plane is-large"></i></span>
+        </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <br>
+    <div class="container">
+      <div class="row" >
+        <div class="col s6 left-align">
+          <span id="date" ><h6 id="demo"></h6></span>
+        </div>
+        <div class="col s6 right-align">
+          <img src="../img/polo.png" id="logo">
+        </div>
+      </div>
+      <span id="superman"><h4 class="black-text bold-text"><b>Feedback</b></h4 ></span>
+    </div>
+    <br>
+    <div class="container">
+      <a class="button is-large is-rounded is-primary" href="add.html">Add Event</a>
+<br><br>
+  </body>
 
 </html>

@@ -50,7 +50,7 @@ function getForm() {
         location: location.value,
         longCoord: lon,
         latCoord: lat,
-        image: imgsrc
+        image: imgsrc.value
       }
 
       ref.push(data);

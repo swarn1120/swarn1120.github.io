@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>marco/polo | home</title>
+  <title>marco/polo | map</title>
   <link rel="stylesheet" href="../css/bulma.css">
   <link rel="stylesheet" href="../css/animate.css">
   <link rel="stylesheet" href="../css/materialize.min.css">
@@ -85,6 +85,45 @@
       border-radius: 15px;
       box-shadow: 0px 4px 10px #888888;
     }
+    #rcorners2 {
+      border-radius: 15px;
+      box-shadow: 0px 4px 10px #888888;
+    }
+
+    #img {
+      border-radius: 15px 15px 15px 15px;
+      width: 100%;
+      box-shadow: 0px 4px 10px #888888;
+      height: 250px;
+      -webkit-filter: blur(1px); /* Safari */
+      filter: blur(1px);
+    }
+
+    .top-left {
+      position: absolute;
+      top: 8px;
+      left: 16px;
+      color: white;
+    }
+
+    .top-left2 {
+      position: absolute;
+      top: 25px;
+      left: 16px;
+      color: white;
+    }
+    .bottom-left {
+      position: absolute;
+      bottom: 10px;
+      left: 16px;
+      color: white;
+    }
+    .bottom-right {
+      position: absolute;
+      bottom: 10px;
+      right: 16px;
+      color: white;
+    }
   </style>
 </head>
 
@@ -96,12 +135,12 @@
       <ul>
         <li class="is-primary is-large">
           <a href="../index.html">
-          <span class="icon is-large has-text-dark"><i class="fas fa-volleyball-ball is-large"></i></span>
+          <span class="icon is-large has-text-dark"><i class="fas fa-trophy is-large"></i></span>
         </a>
         </li>
         <li class="is-primary is-large">
           <a href="map.html">
-          <span class="icon is-large has-text-dark"><i class="fas fa-list-ul is-large"></i></span>
+          <span class="icon is-large has-text-dark"><i class="fas fa-map is-large"></i></span>
         </a>
         </li>
 
@@ -124,7 +163,7 @@
   <div id="over_map2">
     <div class="center-align">
       <a class="btn-floating btn-small waves-effect waves-light blue white-text" id="btn" onclick="locatePopulate()">
-      <i class="far fa-location-arrow is-small center-align"></i>
+      <i class="far fa-compass is-small center-align"></i>
       </a>
     </div>
   </div>
